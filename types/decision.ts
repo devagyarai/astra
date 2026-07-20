@@ -13,4 +13,10 @@ export interface Decision {
   createdAt: string;
   updatedAt: string;
   isArchived?: boolean;
+  analysisHistory?: Array<{
+    type: string;
+    timestamp: number;
+    hash: string;
+    data: unknown;
+  }>;
 }

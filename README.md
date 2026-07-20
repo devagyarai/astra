@@ -10,6 +10,7 @@ Key AI modules:
 - **Orchestrator (`services/ai/orchestrator.ts`)**: The AI brain coordinating provider selection, prompt injection, and stream handling.
 - **Context Builder (`services/ai/context-builder.ts`)**: Deterministic serializer converting the Decision React state into optimal LLM context strings.
 - **Prompt Registry (`prompts/*`)**: Modular, role-based instruction sets for analysis, generation, and personas (e.g., Devil's Advocate, Strategic Consultant).
+- **Decision Intelligence Engine (`services/ai/analysis.ts`)**: A structured analytics engine employing `generateObject` and strict `zod` schemas to return perfectly typed JSON structures (Risk Analysis, Bias Detection, Tradeoff Matrices).
 
 ## Getting Started
 
