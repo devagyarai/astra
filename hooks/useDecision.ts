@@ -1,23 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Decision } from "@/types/decision";
-
-const STORAGE_KEY = "astra_decision_workspace";
-
-const createDefaultDecision = (): Decision => ({
-  id: crypto.randomUUID(),
-  title: "Untitled Decision",
-  goal: "",
-  context: "",
-  constraints: "",
-  options: [],
-  evidence: [],
-  analysis: "",
-  recommendation: "",
-  confidence: 0,
-  notes: "",
-  createdAt: new Date().toISOString(),
-  updatedAt: new Date().toISOString(),
-});
+import { storage, createDefaultDecision } from "@/lib/storage";
 
 export type SaveStatus = "saved" | "saving" | "error";
 
@@ -29,20 +12,38 @@ export function useDecision() {
   // Initial load
   useEffect(() => {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setDecision(JSON.parse(stored));
-        setLastSaved(new Date().toISOString());
-      } else {
-        const defaultDec = createDefaultDecision();
-        setDecision(defaultDec);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultDec));
-        setLastSaved(new Date().toISOString());
+      const activeId = storage.getActiveDecisionId();
+      let activeDec: Decision | null = null;
+      
+      if (activeId === "new") {
+        activeDec = createDefaultDecision();
+        storage.saveDecision(activeDec);
+        storage.setActiveDecisionId(activeDec.id);
+      } else if (activeId) {
+        activeDec = storage.getDecision(activeId);
       }
+      
+      if (!activeDec) {
+        const decisions = storage.getAllDecisions().filter(d => !d.isArchived);
+        if (decisions.length > 0) {
+          // Sort by updated at descending
+          decisions.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+          activeDec = decisions[0];
+          storage.setActiveDecisionId(activeDec.id);
+        } else {
+          activeDec = createDefaultDecision();
+          storage.saveDecision(activeDec);
+          storage.setActiveDecisionId(activeDec.id);
+        }
+      }
+      
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setDecision(activeDec);
+      setLastSaved(activeDec.updatedAt);
     } catch (e) {
       console.error("Failed to load decision from local storage", e);
-      setDecision(createDefaultDecision());
+      const defaultDec = createDefaultDecision();
+      setDecision(defaultDec);
     }
   }, []);
 
@@ -58,7 +59,7 @@ export function useDecision() {
           ...decision,
           updatedAt: new Date().toISOString()
         };
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedDecision));
+        storage.saveDecision(updatedDecision);
         setSaveStatus("saved");
         setLastSaved(updatedDecision.updatedAt);
       } catch (e) {
@@ -120,17 +121,14 @@ export function useDecision() {
 
   const resetDecision = useCallback(() => {
     const defaultDec = createDefaultDecision();
+    storage.saveDecision(defaultDec);
+    storage.setActiveDecisionId(defaultDec.id);
     setDecision(defaultDec);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultDec));
     setLastSaved(defaultDec.updatedAt);
     setSaveStatus("saved");
   }, []);
 
-  useEffect(() => {
-    const handleNewDecision = () => resetDecision();
-    window.addEventListener("astra:new-decision", handleNewDecision);
-    return () => window.removeEventListener("astra:new-decision", handleNewDecision);
-  }, [resetDecision]);
+  // Legacy event listener removed in RC-1
 
   return {
     decision,

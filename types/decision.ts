@@ -12,4 +12,5 @@ export interface Decision {
   notes: string;
   createdAt: string;
   updatedAt: string;
+  isArchived?: boolean;
 }

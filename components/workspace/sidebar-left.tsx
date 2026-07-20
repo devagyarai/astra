@@ -30,26 +30,28 @@ export function SidebarLeft() {
   const router = useRouter();
 
   const navItems = [
-    { title: "Dashboard", icon: LayoutDashboard, url: "/" },
+    { title: "Dashboard", icon: LayoutDashboard, url: "/dashboard" },
     { title: "Decisions", icon: Target, url: "/workspace" },
     { title: "Timeline", icon: Clock, url: "/timeline" },
     { title: "Archive", icon: Archive, url: "/archive" },
   ];
 
   const handleNewDecision = () => {
-    window.dispatchEvent(new Event("astra:new-decision"));
-    if (pathname !== "/workspace") {
+    import("@/lib/storage").then(({ storage }) => {
+      storage.setActiveDecisionId("new");
       router.push("/workspace");
-    }
+    });
   };
 
   return (
     <Sidebar className="border-r border-border/50 bg-background/50 backdrop-blur-xl transition-all duration-300">
       <SidebarHeader className="p-4 flex flex-row items-center gap-3">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
-          <Command className="size-4" />
-        </div>
-        <span className="font-heading text-lg font-bold tracking-widest uppercase">ASTRA</span>
+        <Link href="/dashboard" className="flex items-center gap-3 group">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm transition-transform group-hover:scale-105">
+            <Command className="size-4" />
+          </div>
+          <span className="font-heading text-lg font-bold tracking-widest uppercase transition-colors group-hover:text-primary">ASTRA</span>
+        </Link>
       </SidebarHeader>
       <SidebarContent>
         <div className="px-4 py-4">
