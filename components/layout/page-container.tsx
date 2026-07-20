@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-interface PageContainerProps extends React.HTMLAttributes<HTMLDivElement> {}
+type PageContainerProps = React.HTMLAttributes<HTMLDivElement>;
 
 export function PageContainer({ className, children, ...props }: PageContainerProps) {
   return (
