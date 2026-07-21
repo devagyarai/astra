@@ -74,6 +74,6 @@ test.describe('Astra Core Workflow', () => {
     // We should see our decision here since active ones often show up, or we might need to click an Archive button in the UI
     // In our implementation, we'd look for an archive button on the card.
     // For now, let's just make sure the page loads
-    await expect(page.getByText('Archive', { exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Archive', exact: true })).toBeVisible();
   });
 });

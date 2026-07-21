@@ -9,8 +9,34 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: "ASTRA - Decision Intelligence Platform",
-  description: "AI-powered Decision Intelligence Platform",
+  metadataBase: new URL("https://astra.example.com"),
+  title: {
+    default: "ASTRA - Decision Intelligence Platform",
+    template: "%s | ASTRA",
+  },
+  description: "AI-powered Decision Intelligence Platform. Think clearly. Decide intelligently.",
+  openGraph: {
+    title: "ASTRA - Decision Intelligence Platform",
+    description: "AI-powered Decision Intelligence Platform.",
+    url: "https://astra.example.com",
+    siteName: "Astra",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Astra Decision Intelligence",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ASTRA - Decision Intelligence Platform",
+    description: "AI-powered Decision Intelligence Platform.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
