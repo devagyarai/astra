@@ -15,6 +15,7 @@ const schemaMap: Record<string, z.ZodType<unknown>> = {
   "devils-advocate": schemas.DevilsAdvocateSchema,
   "executive": schemas.ExecutiveSummarySchema,
   "recommendation": schemas.RecommendationSchema,
+  "hybrid": schemas.AiInsightsSchema,
 };
 
 const RequestSchema = z.object({

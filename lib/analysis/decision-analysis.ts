@@ -1,14 +1,18 @@
 import { Decision } from "@/types/decision";
 
 export interface DecisionAnalysis {
+  decisionSummary: string;
   confidenceScore: number;
   completionScore: number;
   riskLevel: "Low" | "Medium" | "High";
+  readiness: "Not Ready" | "Needs Work" | "Ready";
   missingInformation: string[];
   strengths: string[];
   weaknesses: string[];
   recommendations: string[];
   nextBestAction: string;
+  biases: string[];
+  tradeoffs: string[];
 }
 
 export function analyzeDecision(decision: Decision): DecisionAnalysis {
@@ -18,6 +22,8 @@ export function analyzeDecision(decision: Decision): DecisionAnalysis {
   const strengths: string[] = [];
   const weaknesses: string[] = [];
   const recommendations: string[] = [];
+  const biases: string[] = [];
+  const tradeoffs: string[] = [];
   
   const hasGoal = decision.goal.trim().length > 0;
   const hasContext = decision.context.trim().length > 0;
@@ -125,14 +131,54 @@ export function analyzeDecision(decision: Decision): DecisionAnalysis {
   else if (!hasConstraints) nextBestAction = "Define Constraints";
   else if (validEvidence.length === 0) nextBestAction = "Add Evidence";
   
+  // Readiness
+  let readiness: "Not Ready" | "Needs Work" | "Ready" = "Not Ready";
+  if (completionScore >= 80 && confidenceScore >= 70 && riskLevel !== "High") {
+    readiness = "Ready";
+  } else if (completionScore >= 50 || confidenceScore >= 40) {
+    readiness = "Needs Work";
+  }
+
+  // Decision Summary
+  const decisionSummary = hasGoal 
+    ? `A decision regarding: ${decision.goal}` 
+    : "An undefined decision currently lacking a clear goal.";
+
+  // Deterministic Biases
+  if (validOptions.length === 1) {
+    biases.push("Single-Option Aversion (Tunnel Vision)");
+  }
+  if (validEvidence.length === 0 && confidenceScore > 50) {
+    biases.push("Confirmation Bias Risk (Overconfidence without evidence)");
+  }
+  if (!hasConstraints && validOptions.length > 2) {
+    biases.push("Choice Overload Risk (Many options, no constraints)");
+  }
+
+  // Deterministic Trade-offs
+  if (validOptions.length > 1) {
+    tradeoffs.push(`Comparing ${validOptions.length} distinct alternatives against defined constraints.`);
+    if (hasConstraints) {
+      tradeoffs.push("Balancing options against budget, timeline, or technical limits.");
+    }
+  } else if (validOptions.length === 1) {
+    tradeoffs.push(`Evaluating a single path: "${validOptions[0]}". No alternative trade-offs exist yet.`);
+  } else {
+    tradeoffs.push("No trade-offs can be evaluated without defined options.");
+  }
+
   return {
+    decisionSummary,
     confidenceScore,
     completionScore,
     riskLevel,
+    readiness,
     missingInformation,
     strengths,
     weaknesses,
     recommendations,
-    nextBestAction
+    nextBestAction,
+    biases,
+    tradeoffs
   };
 }

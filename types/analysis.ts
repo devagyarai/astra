@@ -106,3 +106,13 @@ export const RecommendationSchema = z.object({
   nextActions: z.array(z.string()),
 });
 export type Recommendation = z.infer<typeof RecommendationSchema>;
+
+// 9. AI Insights (Hybrid Intelligence)
+export const AiInsightsSchema = z.object({
+  executiveSummary: z.string(),
+  richerExplanation: z.string(),
+  alternativeViewpoints: z.array(z.string()),
+  hiddenAssumptions: z.array(z.string()),
+  additionalRecommendations: z.array(z.string())
+});
+export type AiInsights = z.infer<typeof AiInsightsSchema>;
