@@ -51,9 +51,8 @@ export function useDecision() {
   useEffect(() => {
     if (!decision) return;
     
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setSaveStatus("saving");
     const timeoutId = setTimeout(() => {
+      setSaveStatus("saving");
       try {
         const updatedDecision = {
           ...decision,

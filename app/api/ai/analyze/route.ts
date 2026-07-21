@@ -17,9 +17,23 @@ const schemaMap: Record<string, z.ZodType<unknown>> = {
   "recommendation": schemas.RecommendationSchema,
 };
 
+const RequestSchema = z.object({
+  context: z.string(),
+  provider: z.enum(["openai", "anthropic"]),
+  system: z.string().optional(),
+  type: z.string()
+});
+
 export async function POST(req: Request) {
   try {
-    const { context, provider, system, type } = await req.json();
+    const body = await req.json();
+    const parsed = RequestSchema.safeParse(body);
+    
+    if (!parsed.success) {
+      return new Response(JSON.stringify({ error: "Invalid request payload", details: parsed.error.issues }), { status: 400 });
+    }
+
+    const { context, provider, system, type } = parsed.data;
     const apiKey = req.headers.get("x-ai-key");
 
     if (!apiKey) {

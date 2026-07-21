@@ -20,8 +20,13 @@ import {
 } from "lucide-react";
 import { useDecision } from "@/hooks/useDecision";
 import { DecisionProgress } from "@/components/decision/DecisionProgress";
-import { SidebarRight } from "@/components/workspace/sidebar-right";
-import { motion } from "framer-motion";
+import { CopilotSidebar } from "@/components/workspace/copilot-sidebar";
+import { motion, AnimatePresence } from "framer-motion";
+import { getAISettings } from "@/services/ai/providers";
+import { SuggestionPreview } from "@/components/ai/SuggestionPreview";
+import { Sparkles, Bot } from "lucide-react";
+import { PremiumShimmer } from "@/components/ui/premium-skeleton";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 function SaveStatusIndicator({ status, lastSaved }: { status: "saving" | "saved" | "error", lastSaved: string | null }) {
   const [timeText, setTimeText] = useState("");
@@ -95,7 +100,48 @@ export default function WorkspacePage() {
   } = useDecision();
 
   const [activeSection, setActiveSection] = useState("goal");
+  const [inlineAnalyzing, setInlineAnalyzing] = useState<string | null>(null);
+  const [inlineResult, setInlineResult] = useState<{ field: string; data: Record<string, string> } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleInlineAI = async (field: string, analysisType: string) => {
+    if (!decision) return;
+    const aiSettings = getAISettings();
+    const apiKey = aiSettings.provider === "anthropic" ? aiSettings.anthropicKey : aiSettings.openaiKey;
+    if (!apiKey) return;
+
+    setInlineAnalyzing(field);
+    setInlineResult(null);
+
+    try {
+      const res = await fetch("/api/ai/analyze", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-ai-key": apiKey,
+        },
+        body: JSON.stringify({
+          provider: aiSettings.provider,
+          type: analysisType,
+          context: JSON.stringify({
+            goal: decision.goal,
+            context: decision.context,
+            constraints: decision.constraints,
+            options: decision.options,
+            evidence: decision.evidence
+          })
+        }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setInlineResult({ field, data });
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setInlineAnalyzing(null);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -140,8 +186,14 @@ export default function WorkspacePage() {
 
   if (!decision) {
     return (
-      <div className="flex h-full items-center justify-center">
-        <RefreshCw className="h-6 w-6 animate-spin text-muted-foreground" />
+      <div className="flex flex-col h-full bg-background/50 p-6 md:p-8 lg:p-12">
+        <div className="max-w-4xl mx-auto w-full flex flex-col gap-8">
+          <div className="flex items-center gap-4 mb-4">
+            <PremiumShimmer className="h-10 w-3/4 rounded-lg" />
+          </div>
+          <PremiumShimmer className="h-[200px] w-full rounded-xl" />
+          <PremiumShimmer className="h-[200px] w-full rounded-xl" />
+        </div>
       </div>
     );
   }
@@ -193,6 +245,24 @@ export default function WorkspacePage() {
           <div className="hidden sm:flex items-center gap-2 text-xs font-medium min-w-[120px] justify-end mr-4">
             <SaveStatusIndicator status={saveStatus} lastSaved={lastSaved} />
           </div>
+
+          <div className="lg:hidden flex items-center">
+            <Sheet>
+              <SheetTrigger render={
+                <Button variant="outline" size="sm" className="h-8 gap-2">
+                  <Bot className="h-4 w-4" />
+                  <span className="sr-only sm:not-sr-only">Copilot</span>
+                </Button>
+              } />
+              <SheetContent side="right" className="w-[380px] sm:w-[440px] p-0 border-l border-border/50 bg-background/50 backdrop-blur-xl flex flex-col">
+                <CopilotSidebar 
+                  decision={decision} 
+                  updateField={updateField}
+                  isMobile
+                />
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </header>
 
@@ -213,6 +283,16 @@ export default function WorkspacePage() {
                     <CardTitle className="flex items-center gap-2 text-base font-medium">
                       <Target className="h-4 w-4 text-primary" /> Goal
                     </CardTitle>
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      className="h-7 text-xs text-primary" 
+                      onClick={() => handleInlineAI("goal", "goal")}
+                      disabled={inlineAnalyzing === "goal" || !isGoalValid}
+                    >
+                      {inlineAnalyzing === "goal" ? <RefreshCw className="h-3 w-3 mr-1 animate-spin" /> : <Sparkles className="h-3 w-3 mr-1" />}
+                      Improve
+                    </Button>
                   </CardHeader>
                   <CardContent className="p-6 pt-0">
                     <Textarea 
@@ -222,6 +302,22 @@ export default function WorkspacePage() {
                       maxLength={1000}
                       className="min-h-[120px] text-[15px] resize-y bg-transparent border-none shadow-none p-0 focus-visible:ring-0 placeholder:text-muted-foreground/50"
                     />
+                    
+                    <AnimatePresence>
+                      {inlineResult?.field === "goal" && inlineResult.data.improvedGoal && (
+                        <div className="mt-4">
+                          <SuggestionPreview 
+                            title="Improved Goal"
+                            suggestion={inlineResult.data.improvedGoal}
+                            onAccept={() => {
+                              updateField("goal", inlineResult.data.improvedGoal);
+                              setInlineResult(null);
+                            }}
+                            onReject={() => setInlineResult(null)}
+                          />
+                        </div>
+                      )}
+                    </AnimatePresence>
                   </CardContent>
                 </Card>
               </div>
@@ -365,8 +461,13 @@ export default function WorkspacePage() {
             </motion.div>
           </div>
 
-          {/* Right Insights Sidebar */}
-          <SidebarRight decision={decision} />
+          {/* Right Insights Sidebar (Desktop) */}
+          <div className="hidden lg:flex w-[380px] shrink-0">
+            <CopilotSidebar 
+              decision={decision} 
+              updateField={updateField}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -169,8 +169,17 @@ export default function DashboardPage() {
                     </CardHeader>
                     <CardContent className="p-0">
                       {recentDecisions.length === 0 ? (
-                        <div className="p-8 text-center text-muted-foreground text-sm">
-                          No decisions found. Start by creating a new decision.
+                        <div className="p-12 flex flex-col items-center justify-center text-center">
+                          <div className="h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <Target className="h-8 w-8 text-primary/60" />
+                          </div>
+                          <h3 className="text-lg font-semibold text-foreground mb-2">No Decisions Yet</h3>
+                          <p className="text-muted-foreground text-sm max-w-sm mb-6">
+                            Start structuring your thoughts and let Astra help you uncover blind spots and biases in your decision-making.
+                          </p>
+                          <Button onClick={handleNewDecision}>
+                            <Plus className="mr-2 h-4 w-4" /> Create New Decision
+                          </Button>
                         </div>
                       ) : (
                         <div className="flex flex-col gap-3 p-4">

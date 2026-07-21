@@ -28,6 +28,8 @@ export function DecisionProgress({ activeSection, onNavigate, completedSections 
         return (
           <React.Fragment key={section.id}>
             <button
+              aria-label={`Step: ${section.label}${isCompleted ? " (Completed)" : ""}`}
+              aria-current={isActive ? "step" : undefined}
               onClick={() => onNavigate(section.id)}
               className={cn(
                 "relative group flex flex-col items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md transition-all z-10",

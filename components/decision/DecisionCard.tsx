@@ -30,14 +30,22 @@ export function DecisionCard({
   onDuplicate,
   onDelete
 }: DecisionCardProps) {
-  const analysis = analyzeDecision(decision);
+  const analysis = React.useMemo(() => analyzeDecision(decision), [decision]);
   const isComplete = analysis.completionScore >= 90;
 
   return (
     <div 
+      role="button"
+      tabIndex={0}
       onClick={() => onClick(decision.id)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onClick(decision.id);
+        }
+      }}
       className={cn(
-        "p-5 hover:bg-secondary/30 transition-colors cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4 group rounded-xl border border-border/50 bg-card/40 hover:shadow-sm",
+        "p-5 hover:bg-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4 group rounded-xl border border-border/50 bg-card/40 hover:shadow-sm",
         className
       )}
     >

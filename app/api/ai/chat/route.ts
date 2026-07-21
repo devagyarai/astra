@@ -2,12 +2,28 @@ import { createOpenAI } from "@ai-sdk/openai";
 import { createAnthropic } from "@ai-sdk/anthropic";
 import { streamText } from "ai";
 
+import { z } from "zod";
+
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
+const ChatRequestSchema = z.object({
+  messages: z.array(z.any()),
+  provider: z.enum(["openai", "anthropic"]),
+  system: z.string().optional(),
+  decisionContext: z.string().optional()
+});
+
 export async function POST(req: Request) {
   try {
-    const { messages, provider, system } = await req.json();
+    const body = await req.json();
+    const parsed = ChatRequestSchema.safeParse(body);
+    
+    if (!parsed.success) {
+      return new Response(JSON.stringify({ error: "Invalid request payload", details: parsed.error.issues }), { status: 400 });
+    }
+
+    const { messages, provider, system } = parsed.data;
     
     // Get the provider key from headers
     const apiKey = req.headers.get("x-ai-key");

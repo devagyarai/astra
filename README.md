@@ -1,29 +1,41 @@
-# Astra - AI Decision Intelligence Platform
+# Astra — AI Decision Copilot
 
-Astra is an enterprise-grade decision intelligence platform that transforms raw ideas into structured, bias-free, and thoroughly analyzed decisions.
+Astra is an elite, open-source AI decision intelligence platform. It replaces scattered notes and disjointed chat logs with a structured Decision Canvas, partnered with an intelligent Copilot that dynamically analyzes biases, risks, and blind spots.
 
-## Architecture & AI Infrastructure
-
-Astra operates as a purely local-first, privacy-respecting client application. It uses a Bring Your Own Key (BYOK) architecture to interface with AI models (OpenAI, Anthropic) via a Next.js Edge API Proxy. 
-
-Key AI modules:
-- **Orchestrator (`services/ai/orchestrator.ts`)**: The AI brain coordinating provider selection, prompt injection, and stream handling.
-- **Context Builder (`services/ai/context-builder.ts`)**: Deterministic serializer converting the Decision React state into optimal LLM context strings.
-- **Prompt Registry (`prompts/*`)**: Modular, role-based instruction sets for analysis, generation, and personas (e.g., Devil's Advocate, Strategic Consultant).
-- **Decision Intelligence Engine (`services/ai/analysis.ts`)**: A structured analytics engine employing `generateObject` and strict `zod` schemas to return perfectly typed JSON structures (Risk Analysis, Bias Detection, Tradeoff Matrices).
+## Features
+- **Structured Decision Canvas**: Define goals, context, constraints, and options cleanly.
+- **AI Copilot (BYOK)**: Bring your own OpenAI or Anthropic key. Astra's Copilot contextually understands your decision canvas without you needing to copy-paste.
+- **Local-First Privacy**: All decisions and API keys are stored purely in your browser's Local Storage. Astra never syncs your sensitive strategic data to a remote backend.
+- **Dynamic Heuristics**: Get real-time deterministic scoring on your decision's confidence and completion status before ever talking to the AI.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js v18+
+- pnpm v8+
 
+### Installation
+```bash
+git clone https://github.com/your-org/astra.git
+cd astra
+pnpm install
+```
+
+### Development
 ```bash
 pnpm dev
 ```
+Navigate to `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser. To enable the AI Copilot features, navigate to **Settings** and input your API key (stored securely and exclusively in your browser's local storage).
+### Setup AI
+Go to the **Settings** page within the app, select your preferred provider (OpenAI or Anthropic), and paste your API key. Keys remain locally securely in your browser.
 
-## Documentation
+## Tech Stack
+- Next.js 15 (App Router)
+- React 19
+- Tailwind CSS & shadcn/ui
+- Vercel AI SDK
+- Vitest
 
-Full architectural decisions, reports, and component guidelines are located in the `docs/` folder.
-- `docs/reports/D0032_AI_ARCHITECTURE_REPORT.md` (AI Architecture Design)
-- `docs/architecture/` (System Architecture)
+## License
+MIT License. See [LICENSE](LICENSE) for details.
