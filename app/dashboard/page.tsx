@@ -18,7 +18,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Decision } from "@/types/decision";
-import { storage } from "@/lib/storage";
+import { DecisionRepository, createDefaultDecision } from "@/lib/repositories/decision-repository";
 import { analyzeDecision } from "@/lib/analysis/decision-analysis";
 import { DecisionCard } from "@/components/decision/DecisionCard";
 import { motion } from "framer-motion";
@@ -29,7 +29,7 @@ export default function DashboardPage() {
   const [decisions, setDecisions] = useState<Decision[]>([]);
   
   const loadDecisions = () => {
-    setDecisions(storage.getAllDecisions());
+    setDecisions(DecisionRepository.getAll());
   };
 
   useEffect(() => {
@@ -38,17 +38,17 @@ export default function DashboardPage() {
   }, []);
 
   const handleArchive = (id: string) => {
-    storage.archiveDecision(id);
+    DecisionRepository.archive(id);
     loadDecisions();
   };
 
   const handleDelete = (id: string) => {
-    storage.deleteDecision(id);
+    DecisionRepository.delete(id);
     loadDecisions();
   };
 
   const handleDuplicate = (id: string) => {
-    const original = storage.getDecision(id);
+    const original = DecisionRepository.getById(id);
     if (original) {
       const duplicated = {
         ...original,
@@ -57,7 +57,7 @@ export default function DashboardPage() {
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       };
-      storage.saveDecision(duplicated);
+      DecisionRepository.save(duplicated);
       loadDecisions();
     }
   };
@@ -82,12 +82,14 @@ export default function DashboardPage() {
   ).slice(0, 5);
 
   const handleNewDecision = () => {
-    storage.setActiveDecisionId("new");
+    const newDec = createDefaultDecision();
+    DecisionRepository.save(newDec);
+    DecisionRepository.setActiveId(newDec.id);
     router.push("/workspace");
   };
 
   const handleOpenDecision = (id: string) => {
-    storage.setActiveDecisionId(id);
+    DecisionRepository.setActiveId(id);
     router.push("/workspace");
   };
 
@@ -214,6 +216,8 @@ export default function DashboardPage() {
                   <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase mb-2">Quick Actions</h3>
                   
                   <Card 
+                    role="button"
+                    aria-label="New Decision"
                     onClick={handleNewDecision}
                     className="bg-primary/5 border-primary/20 shadow-sm hover:bg-primary/10 transition-all cursor-pointer group"
                   >

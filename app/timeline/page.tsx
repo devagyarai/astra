@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { SidebarLeft } from "@/components/workspace/sidebar-left";
 import { Decision } from "@/types/decision";
-import { storage } from "@/lib/storage";
+import { DecisionRepository, createDefaultDecision } from "@/lib/repositories/decision-repository";
 import { analyzeDecision, DecisionAnalysis } from "@/lib/analysis/decision-analysis";
 import { motion } from "framer-motion";
 import { DecisionCard } from "@/components/decision/DecisionCard";
@@ -16,7 +16,7 @@ export default function TimelinePage() {
   const [decisions, setDecisions] = useState<{decision: Decision, analysis: DecisionAnalysis}[]>([]);
 
   const loadDecisions = () => {
-    const loaded = storage.getAllDecisions();
+    const loaded = DecisionRepository.getAll().filter(d => !d.isArchived);
     const analyzed = loaded.map(d => ({
       decision: d,
       analysis: analyzeDecision(d)
@@ -31,32 +31,22 @@ export default function TimelinePage() {
   }, []);
 
   const handleArchive = (id: string) => {
-    storage.archiveDecision(id);
+    DecisionRepository.archive(id);
     loadDecisions();
   };
 
   const handleDelete = (id: string) => {
-    storage.deleteDecision(id);
+    DecisionRepository.delete(id);
     loadDecisions();
   };
 
   const handleDuplicate = (id: string) => {
-    const original = storage.getDecision(id);
-    if (original) {
-      const duplicated = {
-        ...original,
-        id: crypto.randomUUID(),
-        title: `${original.title} (Copy)`,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-      storage.saveDecision(duplicated);
-      loadDecisions();
-    }
+    DecisionRepository.duplicate(id);
+    loadDecisions();
   };
 
   const handleOpenDecision = (id: string) => {
-    storage.setActiveDecisionId(id);
+    DecisionRepository.setActiveId(id);
     router.push("/workspace");
   };
 
@@ -83,7 +73,9 @@ export default function TimelinePage() {
                   <p className="text-muted-foreground mb-4">Your decision timeline is currently empty.</p>
                   <button 
                     onClick={() => {
-                      storage.setActiveDecisionId("new");
+                      const newDec = createDefaultDecision();
+                      DecisionRepository.save(newDec);
+                      DecisionRepository.setActiveId(newDec.id);
                       router.push("/workspace");
                     }}
                     className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"

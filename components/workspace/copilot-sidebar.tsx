@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Decision } from "@/types/decision";
+import { DecisionRepository } from "@/lib/repositories/decision-repository";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import dynamic from "next/dynamic";
@@ -179,19 +180,15 @@ export function CopilotSidebar({ decision, updateField, isMobile = false }: Copi
 
   useEffect(() => {
     if (!decision.id) return;
-    const saved = localStorage.getItem(`astra_chat_${decision.id}`);
-    if (saved) {
-      try {
-        setMessages(JSON.parse(saved));
-      } catch (e: unknown) {
-        console.error("Local storage parse error:", e);
-      }
+    const saved = DecisionRepository.getChatHistory(decision.id);
+    if (saved && saved.length > 0) {
+      setMessages(saved);
     }
   }, [decision.id, setMessages]);
 
   useEffect(() => {
-    if (messages.length > 0) {
-      localStorage.setItem(`astra_chat_${decision.id}`, JSON.stringify(messages));
+    if (messages.length > 0 || DecisionRepository.getChatHistory(decision.id).length > 0) {
+      DecisionRepository.saveChatHistory(decision.id, messages);
     }
   }, [messages, decision.id]);
 
@@ -203,7 +200,7 @@ export function CopilotSidebar({ decision, updateField, isMobile = false }: Copi
 
   const clearChat = () => {
     setMessages([]);
-    localStorage.removeItem(`astra_chat_${decision.id}`);
+    DecisionRepository.clearChatHistory(decision.id);
   };
 
   if (!isClient) {

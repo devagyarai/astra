@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Decision } from "@/types/decision";
-import { storage, createDefaultDecision } from "@/lib/storage";
+import { DecisionRepository, createDefaultDecision } from "@/lib/repositories/decision-repository";
 
 export type SaveStatus = "saved" | "saving" | "error";
 
@@ -10,34 +10,33 @@ export function useDecision() {
   const [lastSaved, setLastSaved] = useState<string | null>(null);
 
   // Initial load
-  useEffect(() => {
+  const loadDecision = useCallback(() => {
     try {
-      const activeId = storage.getActiveDecisionId();
+      const activeId = DecisionRepository.getActiveId();
       let activeDec: Decision | null = null;
       
       if (activeId === "new") {
         activeDec = createDefaultDecision();
-        storage.saveDecision(activeDec);
-        storage.setActiveDecisionId(activeDec.id);
+        DecisionRepository.save(activeDec);
+        DecisionRepository.setActiveId(activeDec.id);
       } else if (activeId) {
-        activeDec = storage.getDecision(activeId);
+        activeDec = DecisionRepository.getById(activeId);
       }
       
       if (!activeDec) {
-        const decisions = storage.getAllDecisions().filter(d => !d.isArchived);
+        const decisions = DecisionRepository.getAll().filter(d => !d.isArchived);
         if (decisions.length > 0) {
           // Sort by updated at descending
           decisions.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
           activeDec = decisions[0];
-          storage.setActiveDecisionId(activeDec.id);
+          DecisionRepository.setActiveId(activeDec.id);
         } else {
           activeDec = createDefaultDecision();
-          storage.saveDecision(activeDec);
-          storage.setActiveDecisionId(activeDec.id);
+          DecisionRepository.save(activeDec);
+          DecisionRepository.setActiveId(activeDec.id);
         }
       }
       
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setDecision(activeDec);
       setLastSaved(activeDec.updatedAt);
     } catch (e) {
@@ -46,6 +45,18 @@ export function useDecision() {
       setDecision(defaultDec);
     }
   }, []);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    loadDecision();
+    
+    const handleWorkspaceUpdate = () => {
+      loadDecision();
+    };
+    
+    window.addEventListener("astra_workspace_updated", handleWorkspaceUpdate);
+    return () => window.removeEventListener("astra_workspace_updated", handleWorkspaceUpdate);
+  }, [loadDecision]);
 
   // Autosave
   useEffect(() => {
@@ -58,7 +69,7 @@ export function useDecision() {
           ...decision,
           updatedAt: new Date().toISOString()
         };
-        storage.saveDecision(updatedDecision);
+        DecisionRepository.save(updatedDecision);
         setSaveStatus("saved");
         setLastSaved(updatedDecision.updatedAt);
       } catch (e) {
@@ -120,8 +131,8 @@ export function useDecision() {
 
   const resetDecision = useCallback(() => {
     const defaultDec = createDefaultDecision();
-    storage.saveDecision(defaultDec);
-    storage.setActiveDecisionId(defaultDec.id);
+    DecisionRepository.save(defaultDec);
+    DecisionRepository.setActiveId(defaultDec.id);
     setDecision(defaultDec);
     setLastSaved(defaultDec.updatedAt);
     setSaveStatus("saved");

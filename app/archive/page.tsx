@@ -7,7 +7,7 @@ import { SidebarLeft } from "@/components/workspace/sidebar-left";
 import { Archive, Search } from "lucide-react";
 import { motion } from "framer-motion";
 import { Decision } from "@/types/decision";
-import { storage } from "@/lib/storage";
+import { DecisionRepository } from "@/lib/repositories/decision-repository";
 import { analyzeDecision, DecisionAnalysis } from "@/lib/analysis/decision-analysis";
 import { DecisionCard } from "@/components/decision/DecisionCard";
 import { Input } from "@/components/ui/input";
@@ -17,7 +17,7 @@ export default function ArchivePage() {
   const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
 
   const loadArchived = () => {
-    const loaded = storage.getAllDecisions().filter(d => d.isArchived);
+    const loaded = DecisionRepository.getAll().filter(d => d.isArchived);
     const analyzed = loaded.map(d => ({
       decision: d,
       analysis: analyzeDecision(d)
@@ -31,13 +31,13 @@ export default function ArchivePage() {
   }, []);
 
   const handleRestore = (id: string) => {
-    storage.restoreDecision(id);
+    DecisionRepository.restore(id);
     loadArchived();
   };
 
   const handleDelete = (id: string) => {
     if (confirm("Are you sure you want to permanently delete this decision?")) {
-      storage.deleteDecision(id);
+      DecisionRepository.delete(id);
       loadArchived();
     }
   };

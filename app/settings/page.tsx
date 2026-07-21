@@ -4,12 +4,12 @@ import * as React from "react";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { SidebarLeft } from "@/components/workspace/sidebar-left";
 import { Settings, Moon, Sun, Download, Upload, Trash2, Monitor, Key, Bot } from "lucide-react";
+import { DecisionRepository } from "@/lib/repositories/decision-repository";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { storage } from "@/lib/storage";
 import { getAISettings, saveAISettings, AIProviderSettings } from "@/services/ai/providers";
 
 export default function SettingsPage() {
@@ -32,8 +32,8 @@ export default function SettingsPage() {
   };
 
   const handleExport = () => {
-    const data = storage.getAllDecisions();
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    const decisions = DecisionRepository.getAll();
+    const blob = new Blob([JSON.stringify(decisions, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -52,24 +52,23 @@ export default function SettingsPage() {
     reader.onload = (event) => {
       try {
         const content = event.target?.result as string;
-        const data = JSON.parse(content);
+        const imported = JSON.parse(content);
         
-        if (!Array.isArray(data)) {
+        if (!Array.isArray(imported)) {
           alert("Invalid backup file format.");
           return;
         }
 
         if (confirm("This will merge the imported decisions with your existing data. Continue?")) {
-          const current = storage.getAllDecisions();
-          const merged = [...current];
+          const merged = [...DecisionRepository.getAll()];
+        
+          imported.forEach((imp: import("@/types/decision").Decision) => {
+            const idx = merged.findIndex(m => m.id === imp.id);
+            if (idx >= 0) merged[idx] = imp;
+            else merged.push(imp);
+          });
           
-          for (const importedItem of data) {
-            if (!merged.find(d => d.id === importedItem.id)) {
-              merged.push(importedItem);
-            }
-          }
-          
-          localStorage.setItem("astra_decisions", JSON.stringify(merged));
+          merged.forEach(d => DecisionRepository.save(d));
           alert("Import successful!");
           window.location.reload();
         }
@@ -82,9 +81,9 @@ export default function SettingsPage() {
 
   const handleClearData = () => {
     if (confirm("WARNING: This will permanently delete ALL your decisions. This cannot be undone. Are you sure?")) {
-      if (confirm("Are you absolutely sure? Type 'delete' to confirm.")) {
-        localStorage.removeItem("astra_decisions");
-        localStorage.removeItem("astra_active_decision_id");
+      if (confirm("Are you sure? This will delete all your decisions and chat history. This cannot be undone.")) {
+        DecisionRepository.clearAllData();
+        alert("All workspace data has been removed.");
         window.location.href = "/";
       }
     }

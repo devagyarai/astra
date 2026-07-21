@@ -47,16 +47,12 @@ export default function Home() {
           </motion.p>
 
           <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-            <Link href="/dashboard" passHref>
-              <Button size="lg" className="h-12 px-8 rounded-full text-base font-medium shadow-[0_0_20px_-5px_rgba(91,108,255,0.4)] transition-all hover:shadow-[0_0_25px_-5px_rgba(91,108,255,0.5)] active:scale-[0.98]">
-                Open Workspace <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link href="/pricing" passHref>
-              <Button size="lg" variant="outline" className="h-12 px-8 rounded-full text-base font-medium bg-transparent border-border hover:bg-secondary active:scale-[0.98]">
-                Book a Demo
-              </Button>
-            </Link>
+            <Button render={<Link href="/dashboard" />} size="lg" className="h-12 px-8 rounded-full text-base font-medium shadow-[0_0_20px_-5px_rgba(91,108,255,0.4)] transition-all hover:shadow-[0_0_25px_-5px_rgba(91,108,255,0.5)] active:scale-[0.98]">
+              Open Workspace <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button render={<Link href="/pricing" />} size="lg" variant="outline" className="h-12 px-8 rounded-full text-base font-medium bg-transparent border-border hover:bg-secondary active:scale-[0.98]">
+              Book a Demo
+            </Button>
           </motion.div>
         </motion.div>
       </section>
