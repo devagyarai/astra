@@ -179,10 +179,12 @@ export default function SettingsPage() {
 
                   {aiSettings.provider === "openai" && (
                     <div className="flex flex-col gap-2">
-                      <label className="text-sm font-medium text-foreground">OpenAI API Key</label>
+                      <label htmlFor="openai-key" className="text-sm font-medium text-foreground">OpenAI API Key</label>
                       <div className="relative">
                         <Key className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                         <Input 
+                          id="openai-key"
+                          name="openai-key"
                           type="password" 
                           placeholder="sk-..." 
                           className="pl-10"
@@ -196,10 +198,12 @@ export default function SettingsPage() {
 
                   {aiSettings.provider === "anthropic" && (
                     <div className="flex flex-col gap-2">
-                      <label className="text-sm font-medium text-foreground">Anthropic API Key</label>
+                      <label htmlFor="anthropic-key" className="text-sm font-medium text-foreground">Anthropic API Key</label>
                       <div className="relative">
                         <Key className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                         <Input 
+                          id="anthropic-key"
+                          name="anthropic-key"
                           type="password" 
                           placeholder="sk-ant-..." 
                           className="pl-10"
@@ -236,6 +240,9 @@ export default function SettingsPage() {
                       <p className="text-sm text-muted-foreground">Restore decisions from a previous JSON export.</p>
                     </div>
                     <input 
+                      id="import-backup"
+                      name="import-backup"
+                      aria-label="Import Backup JSON"
                       type="file" 
                       accept=".json" 
                       className="hidden" 

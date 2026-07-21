@@ -12,7 +12,7 @@ Only the latest major version is actively supported with security updates.
 
 If you discover a security vulnerability within Astra, please DO NOT report it via public GitHub issues. 
 
-Instead, please send an email directly to security@astra.local (placeholder). We treat all security reports with the highest priority and will attempt to address the issue immediately.
+Instead, please send an email directly to security@devagyarai.com. We treat all security reports with the highest priority and will attempt to address the issue immediately.
 
 ## Data Privacy & API Keys (BYOK)
 Astra utilizes a **Bring Your Own Key (BYOK)** architecture. 

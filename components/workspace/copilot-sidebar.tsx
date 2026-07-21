@@ -314,6 +314,9 @@ export function CopilotSidebar({ decision, updateField, isMobile = false }: Copi
               <div className="p-4 bg-background border-t border-border/50">
                 <form onSubmit={handleSubmit} className="relative flex items-center">
                   <Input 
+                    id="copilot-chat"
+                    name="copilot-chat"
+                    aria-label="Ask Copilot"
                     value={input}
                     onChange={handleInputChange}
                     placeholder="Ask Copilot..."

@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://astra.example.com"),
+  metadataBase: new URL("https://astra.devagyarai.com"),
   title: {
     default: "ASTRA - Decision Intelligence Platform",
     template: "%s | ASTRA",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ASTRA - Decision Intelligence Platform",
     description: "AI-powered Decision Intelligence Platform.",
-    url: "https://astra.example.com",
+    url: "https://astra.devagyarai.com",
     siteName: "Astra",
     images: [
       {

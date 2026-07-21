@@ -16,7 +16,7 @@ Astra is an elite, open-source AI decision intelligence platform. It replaces sc
 
 ### Installation
 ```bash
-git clone https://github.com/your-org/astra.git
+git clone https://github.com/devagyarai/astra.git
 cd astra
 pnpm install
 ```

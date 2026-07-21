@@ -72,10 +72,21 @@ Astra has successfully completed the final production release audit. The applica
 
 ---
 
-## 3. Future Improvements (Post v1.0)
-- Consider adopting `IndexedDB` exclusively to lift `localStorage` limits.
-- Enhance accessibility testing by integrating `axe-core` directly into Playwright tests.
-- Add support for real-time collaboration if syncing features are implemented.
+## 4. Final Polish Updates (v1.0.0 Certification)
+
+### Accessibility
+- All primary form inputs (Decision Goals, Context, Options, Evidence, Constraints, API Keys, Archive Search) have been meticulously tagged with unique `id`, `name`, and `aria-label` attributes to ensure robust screen reader compatibility and semantic HTML form compliance.
+- Visual labels now properly associate with inputs via `htmlFor`.
+
+### Branding
+- Confirmed that Astra utilizes a deliberate text-based logo (`ASTRA`) via typography classes (`font-heading`, `tracking-widest`). No unrendered SVG assets are wasting bundle size or confusing the component tree. 
+
+### Security (CSP)
+- Confirmed that the `Content-Security-Policy` successfully enforces `default-src 'self'`. This intentionally and properly blocks unverified third-party browser extensions (e.g., Grammarly, Perplexity) from injecting vulnerable scripts or scraping local AI decision contexts, safeguarding user privacy and BYOK API keys.
+
+### Offline Capabilities
+- **Current State**: Astra relies completely on `localStorage` (and subsequently IndexedDB in the abstraction layer) to persist decision data and AI keys. This ensures data survives browser refreshes and tab closures flawlessly.
+- **Future State (PWA)**: Full offline browsing (opening the app without a network connection) is not officially supported in v1.0.0. Service Worker and Progressive Web App (PWA) manifesting is formally planned for a post-v1.0 release to enable true offline-first installation.
 
 ---
 

@@ -74,6 +74,10 @@ export default function ArchivePage() {
                 <div className="relative flex-1">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input 
+                    id="search-archive"
+                    name="search-archive"
+                    aria-label="Search archived decisions"
+                    type="search"
                     placeholder="Search archived decisions..." 
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
@@ -81,6 +85,9 @@ export default function ArchivePage() {
                   />
                 </div>
                 <select 
+                  id="sort-archive"
+                  name="sort-archive"
+                  aria-label="Sort decisions"
                   value={sortOrder}
                   onChange={(e) => setSortOrder(e.target.value as "newest" | "oldest")}
                   className="h-10 rounded-md border border-border/50 bg-card/40 px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

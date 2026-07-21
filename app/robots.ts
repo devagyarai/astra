@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/workspace', '/dashboard', '/archive', '/settings'],
     },
-    sitemap: 'https://astra.example.com/sitemap.xml',
+    sitemap: 'https://astra.devagyarai.com/sitemap.xml',
   };
 }

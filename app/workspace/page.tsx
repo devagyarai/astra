@@ -296,6 +296,9 @@ export default function WorkspacePage() {
                   </CardHeader>
                   <CardContent className="p-6 pt-0">
                     <Textarea 
+                      id="decision-goal"
+                      name="decision-goal"
+                      aria-label="What is the primary objective of this decision?"
                       value={decision.goal}
                       onChange={(e) => updateField("goal", e.target.value)}
                       placeholder="What is the primary objective of this decision?"
@@ -331,6 +334,9 @@ export default function WorkspacePage() {
                   </CardHeader>
                   <CardContent className="p-6 pt-0">
                     <Textarea 
+                      id="decision-context"
+                      name="decision-context"
+                      aria-label="Provide background information..."
                       value={decision.context}
                       onChange={(e) => updateField("context", e.target.value)}
                       placeholder="Provide background information..."
@@ -350,6 +356,9 @@ export default function WorkspacePage() {
                   </CardHeader>
                   <CardContent className="p-6 pt-0">
                     <Textarea 
+                      id="decision-constraints"
+                      name="decision-constraints"
+                      aria-label="Budget, timeline, technical limits..."
                       value={decision.constraints}
                       onChange={(e) => updateField("constraints", e.target.value)}
                       placeholder="Budget, timeline, technical limits..."
@@ -380,6 +389,9 @@ export default function WorkspacePage() {
                         <div key={i} className="flex items-start gap-2 rounded-xl border border-border/50 p-3 bg-secondary/10 transition-all focus-within:border-ring">
                           <div className="flex-1">
                             <Input 
+                              id={`decision-option-${i}`}
+                              name={`decision-option-${i}`}
+                              aria-label={`Option ${i + 1}`}
                               value={opt}
                               onChange={(e) => updateOption(i, e.target.value)}
                               placeholder={`Option ${i + 1}`}
@@ -417,6 +429,9 @@ export default function WorkspacePage() {
                         <div key={i} className="flex items-start gap-2 rounded-xl border border-border/50 p-3 bg-secondary/10 transition-all focus-within:border-ring">
                           <div className="flex-1">
                             <Input 
+                              id={`decision-evidence-${i}`}
+                              name={`decision-evidence-${i}`}
+                              aria-label={`Evidence point ${i + 1}`}
                               value={ev}
                               onChange={(e) => updateEvidence(i, e.target.value)}
                               placeholder={`Data point or source ${i + 1}`}
@@ -444,6 +459,9 @@ export default function WorkspacePage() {
                   </CardHeader>
                   <CardContent className="p-6 pt-0">
                     <Textarea 
+                      id="decision-notes"
+                      name="decision-notes"
+                      aria-label="Additional thoughts or meeting notes..."
                       value={decision.notes}
                       onChange={(e) => updateField("notes", e.target.value)}
                       placeholder="Additional thoughts or meeting notes..."
