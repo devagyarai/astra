@@ -1,8 +1,8 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, BrainCircuit, ShieldCheck, Zap, Database, Lock, CheckCircle2 } from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { ArrowRight, Sparkles, BrainCircuit, ShieldCheck, Zap, Database, Lock, CheckCircle2, Target, Plus } from "lucide-react";
 import Link from "next/link";
 
 const FADE_UP_ANIMATION_VARIANTS: Variants = {
@@ -22,59 +22,147 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-background text-foreground selection:bg-primary/20">
       
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4">
+      <section className="relative pt-24 pb-16 md:pt-36 md:pb-24 overflow-hidden flex items-center justify-center px-4 md:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
+        <div className="absolute top-[20%] left-[-10%] w-[50%] h-[40%] rounded-full bg-gradient-to-tr from-[#6D5DF6]/5 to-[#FFC857]/5 blur-[80px] -z-10 animate-pulse duration-[6000ms]" />
         
-        <motion.div
-          initial="hidden"
-          animate="show"
-          viewport={{ once: true }}
-          variants={STAGGER}
-          className="flex flex-col items-center space-y-8 max-w-4xl"
-        >
-          <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary backdrop-blur-sm">
-            <Sparkles className="h-4 w-4" />
-            <span>Introducing Astra Intelligence v1.0</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-[1440px] mx-auto w-full">
+          {/* Left Column: Heading & Value Proposition */}
+          <motion.div
+            initial="hidden"
+            animate="show"
+            viewport={{ once: true }}
+            variants={STAGGER}
+            className="lg:col-span-5 flex flex-col space-y-6 text-left"
+          >
+            <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold tracking-wider uppercase text-primary w-fit backdrop-blur-sm">
+              <Sparkles className="h-3.5 w-3.5 animate-pulse" />
+              <span>Introducing Astra Intelligence v1.1</span>
+            </motion.div>
+
+            <motion.h1 variants={FADE_UP_ANIMATION_VARIANTS} className="text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.15] font-heading">
+              Make <span className="text-[#6D5DF6] dark:text-[#8E82F8]">Better</span> <br />
+              Decisions.
+            </motion.h1>
+
+            <motion.p variants={FADE_UP_ANIMATION_VARIANTS} className="text-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
+              Astra is your AI-powered decision intelligence platform. Structure complex decisions, analyze every trade-off, and make choices with clarity and confidence.
+            </motion.p>
+
+            <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+              <Link 
+                href="/dashboard" 
+                className="w-full sm:w-auto h-12 px-8 rounded-lg text-sm font-semibold bg-[#6D5DF6] hover:bg-[#5b4ce3] text-white shadow-[0_0_20px_-5px_rgba(109,93,246,0.4)] transition-all hover:scale-[1.02] active:scale-[0.98] inline-flex items-center justify-center"
+              >
+                Open Workspace <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <Link 
+                href="/dashboard" 
+                className="w-full sm:w-auto h-12 px-8 rounded-lg text-sm font-semibold bg-transparent border border-border hover:bg-secondary/40 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center justify-center"
+              >
+                Live Demo
+              </Link>
+            </motion.div>
           </motion.div>
 
-          <motion.h1 variants={FADE_UP_ANIMATION_VARIANTS} className="text-display-xl tracking-tight">
-            Think clearly. <br />
-            <span className="text-muted-foreground font-normal">Decide intelligently.</span>
-          </motion.h1>
-
-          <motion.p variants={FADE_UP_ANIMATION_VARIANTS} className="text-body text-lg md:text-xl max-w-2xl text-muted-foreground">
-            Astra is a premium decision intelligence platform that evaluates your reasoning in real-time. Say goodbye to intuition bias and hello to deterministic clarity.
-          </motion.p>
-
-          <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-            <Button render={<Link href="/dashboard" />} size="lg" className="h-12 px-8 rounded-full text-base font-medium shadow-[0_0_20px_-5px_rgba(91,108,255,0.4)] transition-all hover:shadow-[0_0_25px_-5px_rgba(91,108,255,0.5)] active:scale-[0.98]">
-              Open Workspace <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button render={<Link href="/pricing" />} size="lg" variant="outline" className="h-12 px-8 rounded-full text-base font-medium bg-transparent border-border hover:bg-secondary active:scale-[0.98]">
-              Book a Demo
-            </Button>
-          </motion.div>
-        </motion.div>
-      </section>
-
-      {/* PRODUCT PREVIEW */}
-      <section className="py-10 px-4 md:px-8 max-w-7xl mx-auto w-full">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="rounded-2xl border border-border/50 bg-card/30 backdrop-blur-xl shadow-2xl overflow-hidden"
-        >
-          <div className="flex items-center gap-2 px-4 py-3 border-b border-border/50 bg-secondary/30">
-            <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-destructive/80" />
-              <div className="w-3 h-3 rounded-full bg-warning/80" />
-              <div className="w-3 h-3 rounded-full bg-success/80" />
+          {/* Right Column: Premium Dashboard Preview Mockup */}
+          <motion.div
+            initial={{ opacity: 0, x: 50, scale: 0.98 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+            className="lg:col-span-7 w-full hidden lg:block"
+          >
+            <div className="relative rounded-xl border border-border/60 bg-background/60 dark:bg-card/40 backdrop-blur-xl shadow-3xl overflow-hidden flex flex-col h-[460px]">
+              {/* Window Controls */}
+              <div className="flex items-center justify-between px-4 py-3 border-b border-border/40 bg-muted/20">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-destructive/60" />
+                  <div className="w-3 h-3 rounded-full bg-warning/60" />
+                  <div className="w-3 h-3 rounded-full bg-success/60" />
+                </div>
+                <div className="text-[11px] font-medium text-muted-foreground/60 select-none">Astra Workspace — Dashboard</div>
+                <div className="w-12" />
+              </div>
+              
+              {/* App Layout */}
+              <div className="flex flex-1 overflow-hidden text-left">
+                {/* Mock Sidebar */}
+                <div className="w-48 border-r border-border/40 p-4 bg-muted/10 flex flex-col gap-4 text-xs font-medium shrink-0">
+                  <div className="flex items-center gap-2 font-heading font-semibold text-foreground tracking-wider uppercase">
+                    <div className="w-5 h-5 rounded-md bg-gradient-to-b from-white to-[#6D5DF6] flex items-center justify-center text-[10px] font-black text-white shadow-xs">✦</div>
+                    <span>ASTRA</span>
+                  </div>
+                  
+                  <div className="flex flex-col gap-1.5 mt-2">
+                    <span className="text-[10px] uppercase font-semibold tracking-wider text-muted-foreground/60 mb-1">Menu</span>
+                    <div className="flex items-center gap-2 px-2 py-1.5 rounded-md bg-secondary/80 text-foreground"><div className="w-3.5 h-3.5 rounded bg-primary/20 shrink-0" /> Dashboard</div>
+                    <div className="flex items-center gap-2 px-2 py-1.5 text-muted-foreground/80 hover:text-foreground"><div className="w-3.5 h-3.5 rounded bg-muted shrink-0" /> Timeline</div>
+                    <div className="flex items-center gap-2 px-2 py-1.5 text-muted-foreground/80 hover:text-foreground"><div className="w-3.5 h-3.5 rounded bg-muted shrink-0" /> Archive</div>
+                  </div>
+                  
+                  <div className="flex flex-col gap-1.5 mt-2">
+                    <span className="text-[10px] uppercase font-semibold tracking-wider text-muted-foreground/60 mb-1">Workspace</span>
+                    <div className="text-[11px] text-muted-foreground/60 px-2 italic">No decisions found.</div>
+                  </div>
+                </div>
+                
+                {/* Mock Main Pane */}
+                <div className="flex-1 p-6 bg-card/10 overflow-y-auto flex flex-col gap-6">
+                  <div className="text-base font-semibold font-heading tracking-tight text-foreground">Dashboard</div>
+                  
+                  {/* Grid of Stats */}
+                  <div className="grid grid-cols-4 gap-3 shrink-0">
+                    {[
+                      { label: "Total Decisions", value: "0" },
+                      { label: "Active Decisions", value: "0" },
+                      { label: "Avg. Completion", value: "0%" },
+                      { label: "Avg. Confidence", value: "0%" }
+                    ].map((stat, idx) => (
+                      <div key={idx} className="p-3 border border-border/40 rounded-lg bg-background/50 flex flex-col gap-1">
+                        <span className="text-[9px] font-medium text-muted-foreground truncate">{stat.label}</span>
+                        <span className="text-base font-bold font-heading">{stat.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Dashboard Bottom Section */}
+                  <div className="grid grid-cols-3 gap-4 flex-1 min-h-0">
+                    {/* Recent Decisions Card (2/3) */}
+                    <div className="col-span-2 border border-border/40 rounded-lg bg-background/50 p-4 flex flex-col items-center justify-center text-center">
+                      <div className="relative flex items-center justify-center mb-2">
+                        <div className="absolute w-12 h-12 rounded-full border border-primary/20 animate-ping opacity-25" />
+                        <div className="absolute w-8 h-8 rounded-full border border-primary/30" />
+                        <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Target className="h-3 w-3 text-primary/60" />
+                        </div>
+                      </div>
+                      <span className="text-xs font-semibold text-foreground mb-0.5">No Decisions Yet</span>
+                      <span className="text-[10px] text-muted-foreground leading-normal max-w-[200px] mb-3">
+                        Start structuring your thoughts with Astra.
+                      </span>
+                      <div className="px-3 py-1.5 text-[10px] font-semibold text-white bg-[#6D5DF6] rounded-md shadow-xs flex items-center gap-1 select-none">
+                        <Plus className="h-3 w-3" /> Create New Decision
+                      </div>
+                    </div>
+                    
+                    {/* Quick Actions (1/3) */}
+                    <div className="flex flex-col gap-2 shrink-0">
+                      <span className="text-[9px] uppercase font-semibold tracking-wider text-muted-foreground/60 mb-0.5">Quick Actions</span>
+                      <div className="p-2.5 border border-border/40 rounded-lg bg-[#6D5DF6]/5 flex items-center gap-2.5">
+                        <div className="w-6 h-6 rounded-full bg-[#6D5DF6]/20 flex items-center justify-center text-[#6D5DF6] text-[10px] font-bold">+</div>
+                        <div className="flex flex-col"><span className="text-[10px] font-semibold text-foreground">New Decision</span><span className="text-[8px] text-muted-foreground">Start workspace</span></div>
+                      </div>
+                      <div className="p-2.5 border border-border/40 rounded-lg bg-background/40 flex items-center gap-2.5">
+                        <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-foreground text-[10px] font-bold">◷</div>
+                        <div className="flex flex-col"><span className="text-[10px] font-semibold text-foreground">Timeline</span><span className="text-[8px] text-muted-foreground">Browse history</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="aspect-[16/9] w-full bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')] bg-cover bg-center opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" />
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* WHY ASTRA */}
@@ -154,18 +242,21 @@ export default function Home() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="py-24 px-4 max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold mb-16">How It Works</h2>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+      <section className="py-24 px-4 max-w-7xl mx-auto text-center border-t border-border/40">
+        <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">How Astra Works</h2>
+        <p className="text-muted-foreground text-base max-w-xl mx-auto mb-16">
+          Three simple steps to make better decisions with AI intelligence.
+        </p>
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           {[
-            { num: "01", title: "Define the Goal", desc: "Start with a clear, measurable objective." },
-            { num: "02", title: "Build the Case", desc: "Add context, constraints, options, and evidence." },
-            { num: "03", title: "Review Insights", desc: "Let Astra calculate your confidence score." }
+            { num: "01", title: "Structure", desc: "Break down your decision with goals, context, constraints, and options." },
+            { num: "02", title: "Analyze", desc: "Astra analyzes trade-offs, risks, biases, and potential outcomes." },
+            { num: "03", title: "Decide", desc: "Get AI-powered recommendations and make confident, informed decisions." }
           ].map((step, i) => (
-            <div key={i} className="flex flex-col items-center max-w-xs">
-              <div className="text-5xl font-bold font-heading text-primary/20 mb-6">{step.num}</div>
-              <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-              <p className="text-muted-foreground">{step.desc}</p>
+            <div key={i} className="flex flex-col items-center p-8 rounded-2xl border border-border/50 bg-card/40 hover:bg-card/60 transition-all hover:scale-[1.02] duration-300">
+              <div className="text-4xl font-bold font-heading text-primary/30 mb-4">{step.num}</div>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">{step.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">{step.desc}</p>
             </div>
           ))}
         </div>

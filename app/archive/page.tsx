@@ -55,11 +55,11 @@ export default function ArchivePage() {
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen w-full overflow-hidden bg-background">
+      <div className="flex h-[calc(100vh-4rem)] w-full overflow-hidden bg-background">
         <SidebarLeft />
         <main className="flex-1 flex flex-col h-full bg-background/50 overflow-hidden">
           <header className="shrink-0 sticky top-0 z-10 flex min-h-16 items-center gap-4 border-b border-border/50 bg-background/80 px-6 backdrop-blur-md">
-            <SidebarTrigger className="lg:hidden h-8 w-8 text-muted-foreground hover:text-foreground" />
+            <SidebarTrigger className="h-8 w-8 text-muted-foreground hover:text-foreground" />
             <h1 className="text-lg font-semibold font-heading tracking-tight">Archive</h1>
           </header>
 

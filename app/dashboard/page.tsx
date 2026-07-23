@@ -95,11 +95,11 @@ export default function DashboardPage() {
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen w-full overflow-hidden bg-background">
+      <div className="flex h-[calc(100vh-4rem)] w-full overflow-hidden bg-background">
         <SidebarLeft />
         <main className="flex-1 flex flex-col h-full bg-background/50 overflow-hidden">
           <header className="shrink-0 sticky top-0 z-10 flex min-h-16 items-center gap-4 border-b border-border/50 bg-background/80 px-6 backdrop-blur-md">
-            <SidebarTrigger className="lg:hidden h-8 w-8 text-muted-foreground hover:text-foreground" />
+            <SidebarTrigger className="h-8 w-8 text-muted-foreground hover:text-foreground" />
             <h1 className="text-lg font-semibold font-heading tracking-tight">Dashboard</h1>
           </header>
 
@@ -162,24 +162,29 @@ export default function DashboardPage() {
                 {/* Main Content Area */}
                 <div className="col-span-2 flex flex-col gap-8">
                   {/* Recent Decisions */}
-                  <Card className="bg-card/40 border-border/50 shadow-sm backdrop-blur-sm">
+                  <Card className="bg-card/40 border-border/50 shadow-sm backdrop-blur-sm flex-1 flex flex-col">
                     <CardHeader className="p-6 border-b border-border/50 flex flex-row items-center justify-between">
                       <CardTitle className="text-base font-semibold">Recent Decisions</CardTitle>
                       <Button variant="ghost" size="sm" onClick={() => router.push('/timeline')} className="text-xs">
                         View All <ArrowRight className="ml-1 h-3 w-3" />
                       </Button>
                     </CardHeader>
-                    <CardContent className="p-0">
+                    <CardContent className="p-0 flex-1 flex flex-col">
                       {recentDecisions.length === 0 ? (
-                        <div className="p-12 flex flex-col items-center justify-center text-center">
-                          <div className="h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                            <Target className="h-8 w-8 text-primary/60" />
+                        <div className="p-12 flex-1 flex flex-col items-center justify-center text-center my-auto">
+                          <div className="relative flex items-center justify-center mb-6">
+                            {/* Concerted Ripple Circle Effect */}
+                            <div className="absolute w-20 h-20 rounded-full border border-primary/10 animate-ping opacity-25" />
+                            <div className="absolute w-14 h-14 rounded-full border border-primary/25" />
+                            <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center z-10">
+                              <Target className="h-5 w-5 text-primary/60" />
+                            </div>
                           </div>
                           <h3 className="text-lg font-semibold text-foreground mb-2">No Decisions Yet</h3>
-                          <p className="text-muted-foreground text-sm max-w-sm mb-6">
+                          <p className="text-muted-foreground text-sm max-w-sm mb-6 leading-relaxed">
                             Start structuring your thoughts and let Astra help you uncover blind spots and biases in your decision-making.
                           </p>
-                          <Button onClick={handleNewDecision}>
+                          <Button onClick={handleNewDecision} className="bg-[#6D5DF6] hover:bg-[#5b4ce3] text-white">
                             <Plus className="mr-2 h-4 w-4" /> Create New Decision
                           </Button>
                         </div>
@@ -199,16 +204,6 @@ export default function DashboardPage() {
                       )}
                     </CardContent>
                   </Card>
-
-                  {/* Placeholder Analytics */}
-                  <Card className="bg-card/40 border-border/50 shadow-sm backdrop-blur-sm opacity-70">
-                    <CardHeader className="p-6 border-b border-border/50">
-                      <CardTitle className="text-base font-semibold">Activity Timeline</CardTitle>
-                    </CardHeader>
-                    <CardContent className="p-8 flex items-center justify-center min-h-[200px]">
-                      <p className="text-sm text-muted-foreground italic">Analytics chart visualization will appear here.</p>
-                    </CardContent>
-                  </Card>
                 </div>
 
                 {/* Quick Actions Sidebar */}
@@ -219,14 +214,14 @@ export default function DashboardPage() {
                     role="button"
                     aria-label="New Decision"
                     onClick={handleNewDecision}
-                    className="bg-primary/5 border-primary/20 shadow-sm hover:bg-primary/10 transition-all cursor-pointer group"
+                    className="bg-[#6D5DF6]/5 border-[#6D5DF6]/20 shadow-sm hover:bg-[#6D5DF6]/10 transition-all cursor-pointer group"
                   >
                     <CardContent className="p-5 flex items-center gap-4">
-                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                      <div className="h-10 w-10 rounded-full bg-[#6D5DF6]/20 flex items-center justify-center text-[#6D5DF6] group-hover:scale-110 transition-transform">
                         <Plus className="h-5 w-5" />
                       </div>
                       <div className="flex flex-col">
-                        <span className="font-semibold text-primary">New Decision</span>
+                        <span className="font-semibold text-[#6D5DF6] dark:text-[#8E82F8] text-sm">New Decision</span>
                         <span className="text-xs text-muted-foreground">Start a new workspace</span>
                       </div>
                     </CardContent>
@@ -241,7 +236,7 @@ export default function DashboardPage() {
                         <Clock className="h-5 w-5" />
                       </div>
                       <div className="flex flex-col">
-                        <span className="font-semibold text-foreground">Browse Timeline</span>
+                        <span className="font-semibold text-foreground text-sm">Browse Timeline</span>
                         <span className="text-xs text-muted-foreground">View all past decisions</span>
                       </div>
                     </CardContent>
@@ -263,7 +258,7 @@ export default function DashboardPage() {
                         <LayoutTemplate className="h-5 w-5" />
                       </div>
                       <div className="flex flex-col">
-                        <span className="font-semibold text-foreground">Continue Last</span>
+                        <span className="font-semibold text-foreground text-sm">Continue Last</span>
                         <span className="text-xs text-muted-foreground">Jump back in</span>
                       </div>
                     </CardContent>

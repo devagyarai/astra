@@ -222,7 +222,7 @@ export default function WorkspacePage() {
       {/* Header */}
       <header className="sticky top-0 z-10 flex min-h-16 items-center justify-between gap-4 border-b border-border/50 bg-background/80 px-6 backdrop-blur-md">
         <div className="flex items-center gap-4 flex-1">
-          <SidebarTrigger className="lg:hidden h-8 w-8 text-muted-foreground hover:text-foreground" />
+          <SidebarTrigger className="h-8 w-8 text-muted-foreground hover:text-foreground" />
           <div className="flex flex-col w-full max-w-lg">
             <Input 
               value={decision.title}
