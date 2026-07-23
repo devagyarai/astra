@@ -6,6 +6,8 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
+import { BrandIcon } from "@/components/ui/brand-logo";
+
 export function MainNav() {
   const { setTheme, theme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
@@ -19,7 +21,8 @@ export function MainNav() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between px-4 md:px-8">
         <div className="flex items-center gap-12">
-          <Link href="/" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <BrandIcon className="h-6 w-6 transition-transform group-hover:scale-105" />
             <span className="font-heading text-xl font-bold tracking-widest uppercase transition-opacity group-hover:opacity-80">
               ASTRA
             </span>

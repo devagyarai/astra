@@ -10,7 +10,6 @@ import {
   Archive, 
   Settings, 
   Plus,
-  Command,
   Search,
   MoreVertical,
   Copy,
@@ -38,6 +37,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { formatDistanceToNow } from "date-fns";
+import { BrandIcon } from "@/components/ui/brand-logo";
 
 export function SidebarLeft() {
   const pathname = usePathname();
@@ -86,18 +86,39 @@ export function SidebarLeft() {
 
   return (
     <Sidebar className="border-r border-border/50 bg-background/50 backdrop-blur-xl transition-all duration-300">
-      <SidebarHeader className="p-4 flex flex-col gap-4">
-        <Link href="/dashboard" className="flex items-center gap-3 group">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm transition-transform group-hover:scale-105">
-            <Command className="size-4" />
-          </div>
+      <SidebarHeader className="p-4 flex flex-col gap-4 border-b border-border/40">
+        <Link href="/dashboard" className="flex items-center gap-2.5 group">
+          <BrandIcon className="h-6 w-6 transition-transform group-hover:scale-105" />
           <span className="font-heading text-lg font-bold tracking-widest uppercase transition-colors group-hover:text-primary">ASTRA</span>
         </Link>
       </SidebarHeader>
 
-      <SidebarContent className="flex flex-col h-full overflow-hidden">
-        {/* Workspace Manager */}
-        <div className="flex-1 overflow-hidden flex flex-col px-2">
+      <SidebarContent className="flex flex-col h-[calc(100vh-5rem)] overflow-hidden">
+        {/* Navigation Menu (Top) */}
+        <SidebarGroup className="px-2 pt-4 pb-2">
+          <SidebarGroupLabel className="text-xs uppercase tracking-wider text-muted-foreground/60 mb-2">Menu</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {menuItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <Link href={item.url} className="w-full">
+                    <SidebarMenuButton 
+                      isActive={pathname === item.url} 
+                      tooltip={item.title}
+                      className="transition-all hover:bg-secondary/50"
+                    >
+                      <item.icon className="h-4 w-4" />
+                      <span className="font-medium text-sm">{item.title}</span>
+                    </SidebarMenuButton>
+                  </Link>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Workspace Manager (Middle - flex-1) */}
+        <div className="flex-1 overflow-hidden flex flex-col px-2 pt-4 border-t border-border/40">
           <div className="flex items-center justify-between px-2 mb-2">
             <SidebarGroupLabel className="text-xs uppercase tracking-wider text-muted-foreground/60 p-0">Workspace</SidebarGroupLabel>
             <Button aria-label="New Decision" onClick={handleCreateNew} variant="ghost" size="icon" className="h-6 w-6 rounded-full hover:bg-primary/10 hover:text-primary">
@@ -183,25 +204,10 @@ export function SidebarLeft() {
           </div>
         </div>
         
-        {/* General Menu */}
-        <SidebarGroup className="mt-auto border-t border-border/50 pt-2">
-          <SidebarGroupLabel className="text-xs uppercase tracking-wider text-muted-foreground/60 mb-2">Menu</SidebarGroupLabel>
+        {/* Settings/Bottom Menu (Bottom) */}
+        <SidebarGroup className="mt-auto border-t border-border/40 pt-2 pb-4">
           <SidebarGroupContent>
             <SidebarMenu>
-              {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <Link href={item.url} className="w-full">
-                    <SidebarMenuButton 
-                      isActive={pathname === item.url} 
-                      tooltip={item.title}
-                      className="transition-all hover:bg-secondary/50"
-                    >
-                      <item.icon className="h-4 w-4" />
-                      <span className="font-medium text-sm">{item.title}</span>
-                    </SidebarMenuButton>
-                  </Link>
-                </SidebarMenuItem>
-              ))}
               <SidebarMenuItem>
                 <Link href="/settings" className="w-full">
                   <SidebarMenuButton 

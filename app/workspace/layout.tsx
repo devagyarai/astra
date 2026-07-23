@@ -7,7 +7,7 @@ export default function WorkspaceLayout({ children }: { children: React.ReactNod
   return (
     <TooltipProvider>
       <SidebarProvider>
-        <div className="flex h-screen w-full overflow-hidden bg-background">
+        <div className="flex h-[calc(100vh-4rem)] w-full overflow-hidden bg-background">
           <SidebarLeft />
           <main className="flex-1 overflow-y-auto">
             {children}
