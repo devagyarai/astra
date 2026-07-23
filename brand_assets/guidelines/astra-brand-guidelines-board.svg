@@ -1,0 +1,1411 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2900" width="2000" height="2900">
+    
+    <defs>
+        <!-- Primary Starlight Flare Gradient -->
+        <linearGradient id="bb_starGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="35%" stop-color="#FFC857"/>
+            <stop offset="70%" stop-color="#6D5DF6"/>
+            <stop offset="100%" stop-color="#4F46E5"/>
+        </linearGradient>
+
+        <!-- Star Horizontal Glow Gradient -->
+        <linearGradient id="bb_starHorizGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+            <stop offset="50%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+        </linearGradient>
+
+        <!-- Star Radial Core Glow -->
+        <radialGradient id="bb_coreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+            <stop offset="30%" stop-color="#FFC857" stop-opacity="0.9"/>
+            <stop offset="70%" stop-color="#6D5DF6" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Horizon Arc Gradient -->
+        <linearGradient id="bb_horizonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="50%" stop-color="#FFC857" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+        </linearGradient>
+
+        <!-- Light Theme Horizon Arc Gradient -->
+        <linearGradient id="bb_horizonLightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.25"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="50%" stop-color="#D97706" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.25"/>
+        </linearGradient>
+
+        <!-- App Icon Background Gradient -->
+        <linearGradient id="bb_appIconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E1B4B"/>
+            <stop offset="45%" stop-color="#0B1020"/>
+            <stop offset="100%" stop-color="#030712"/>
+        </linearGradient>
+    </defs>
+    
+    
+    <!-- Outer Board Background -->
+    <rect width="2000" height="2900" fill="#070A14"/>
+    
+    <!-- Top Header -->
+    <rect width="2000" height="180" fill="#0B1020"/>
+    <line x1="0" y1="180" x2="2000" y2="180" stroke="#1E293B" stroke-width="2"/>
+    <text x="80" y="85" font-family="system-ui, sans-serif" font-size="42px" font-weight="800" fill="#FFFFFF" letter-spacing="4px">ASTRA LOGO SUITE</text>
+    <text x="80" y="130" font-family="system-ui, sans-serif" font-size="24px" font-weight="500" fill="#6D5DF6" letter-spacing="1px">Horizon Rise Concept</text>
+
+    <text x="1920" y="90" font-family="system-ui, sans-serif" font-size="20px" font-weight="400" fill="#A1A7BB" text-anchor="end">A guiding star rising above the horizon,</text>
+    <text x="1920" y="125" font-family="system-ui, sans-serif" font-size="20px" font-weight="400" fill="#A1A7BB" text-anchor="end">symbolizing intelligence, direction and limitless potential.</text>
+
+    <!-- SECTION 1 & 2: PRIMARY & STACKED LOGOS -->
+    <!-- 1. Primary Horizontal -->
+    <text x="80" y="240" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">1. PRIMARY LOGO – HORIZONTAL</text>
+    <rect x="80" y="260" width="880" height="340" rx="20" fill="#0B1020" stroke="#1E293B" stroke-width="2"/>
+    <g transform="translate(30, 40)">
+        
+    <g id="bb_p_d_horizon_rise_mark">
+        <circle cx="220" cy="220" r="56.25" fill="url(#bb_p_d_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 85.0,310.0 Q 220,256.0 355.0,310.0 Q 220,268.0 85.0,310.0 Z" 
+              fill="url(#bb_p_d_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 175.0,175.0 Q 220,220 214.75,214.75 Q 220,220 175.0,175.0 Z
+                 M 265.0,175.0 Q 220,220 225.25,214.75 Q 220,220 265.0,175.0 Z
+                 M 175.0,265.0 Q 220,220 214.75,225.25 Q 220,220 175.0,265.0 Z
+                 M 265.0,265.0 Q 220,220 225.25,225.25 Q 220,220 265.0,265.0 Z"
+              fill="url(#bb_p_d_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 126.25,220 Q 220,210.25 220,220 Q 220,229.75 126.25,220 Z
+                 M 313.75,220 Q 220,210.25 220,220 Q 220,229.75 313.75,220 Z"
+              fill="url(#bb_p_d_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 220,111.25 Q 208.0,220 220,220 Q 232.0,220 220,111.25 Z
+                 M 220,317.5 Q 208.0,220 220,220 Q 232.0,220 220,317.5 Z"
+              fill="url(#bb_p_d_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="220,211.0 229.0,220 220,229.0 211.0,220" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+        
+    <g id="bb_p_d_wordmark_group">
+        
+        <path d="M 466.0,182 L 443.25,247.0 L 452.9025,247.0 L 466.0,196.3 L 479.0975,247.0 L 488.75,247.0 Z
+                 M 453.0,223.6 L 479.0,223.6 L 479.0,232.375 L 453.0,232.375 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 560.25,196.3 C 553.75,185.25 527.75,185.25 527.75,202.8 C 527.75,215.8 562.2,213.2 562.2,228.8 C 562.2,245.7 531.0,245.7 523.2,232.7 L 531.975,230.1 C 529.7,237.9 553.1,237.9 553.1,228.8 C 553.1,217.1 518.65,218.4 518.65,202.8 C 518.65,187.2 550.5,187.2 560.25,196.3 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 592.75,182 L 639.55,182 L 639.55,190.775 L 620.5375,190.775 L 620.5375,247.0 L 611.7624999999999,247.0 L 611.7624999999999,190.775 L 592.75,190.775 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 668.8,182 L 698.05,182 C 715.5999999999999,182 715.5999999999999,214.5 698.05,214.5 L 677.5749999999999,214.5 L 677.5749999999999,247.0 L 668.8,247.0 Z
+                 M 677.5749999999999,190.775 L 696.75,190.775 C 706.5,190.775 706.5,205.725 696.75,205.725 L 677.5749999999999,205.725 Z
+                 M 689.5999999999999,213.2 L 713.0,247.0 L 701.5925,247.0 L 683.0999999999999,213.2 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 770.8499999999999,182 L 748.0999999999999,247.0 L 757.7524999999999,247.0 L 770.8499999999999,196.3 L 783.9474999999999,247.0 L 793.5999999999999,247.0 Z
+                 M 757.8499999999999,223.6 L 783.8499999999999,223.6 L 783.8499999999999,232.375 L 757.8499999999999,232.375 Z"
+              fill="#FFFFFF" />
+    
+        
+            <text x="603.8" y="266.5" font-family="system-ui, -apple-system, 'Geist', 'Satoshi', 'Inter', sans-serif" 
+                  font-size="13.0px" font-weight="600" letter-spacing="27.3px" fill="#A1A7BB" text-anchor="middle">
+                AI WORKSPACE
+            </text>
+        
+    </g>
+    
+    </g>
+    <text x="520" y="575" font-family="system-ui, sans-serif" font-size="16px" fill="#A1A7BB" text-anchor="middle">On Dark Background</text>
+
+    <rect x="1040" y="260" width="880" height="340" rx="20" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+    <g transform="translate(990, 40)">
+        
+    <g id="bb_p_l_horizon_rise_mark">
+        <circle cx="220" cy="220" r="56.25" fill="url(#bb_p_l_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 85.0,310.0 Q 220,256.0 355.0,310.0 Q 220,268.0 85.0,310.0 Z" 
+              fill="url(#bb_p_l_horizonLightGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 175.0,175.0 Q 220,220 214.75,214.75 Q 220,220 175.0,175.0 Z
+                 M 265.0,175.0 Q 220,220 225.25,214.75 Q 220,220 265.0,175.0 Z
+                 M 175.0,265.0 Q 220,220 214.75,225.25 Q 220,220 175.0,265.0 Z
+                 M 265.0,265.0 Q 220,220 225.25,225.25 Q 220,220 265.0,265.0 Z"
+              fill="url(#bb_p_l_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 126.25,220 Q 220,210.25 220,220 Q 220,229.75 126.25,220 Z
+                 M 313.75,220 Q 220,210.25 220,220 Q 220,229.75 313.75,220 Z"
+              fill="url(#bb_p_l_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 220,111.25 Q 208.0,220 220,220 Q 232.0,220 220,111.25 Z
+                 M 220,317.5 Q 208.0,220 220,220 Q 232.0,220 220,317.5 Z"
+              fill="url(#bb_p_l_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="220,211.0 229.0,220 220,229.0 211.0,220" 
+                 fill="#090D16" opacity="0.95"/>
+    </g>
+    
+        
+    <g id="bb_p_l_wordmark_group">
+        
+        <path d="M 466.0,182 L 443.25,247.0 L 452.9025,247.0 L 466.0,196.3 L 479.0975,247.0 L 488.75,247.0 Z
+                 M 453.0,223.6 L 479.0,223.6 L 479.0,232.375 L 453.0,232.375 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 560.25,196.3 C 553.75,185.25 527.75,185.25 527.75,202.8 C 527.75,215.8 562.2,213.2 562.2,228.8 C 562.2,245.7 531.0,245.7 523.2,232.7 L 531.975,230.1 C 529.7,237.9 553.1,237.9 553.1,228.8 C 553.1,217.1 518.65,218.4 518.65,202.8 C 518.65,187.2 550.5,187.2 560.25,196.3 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 592.75,182 L 639.55,182 L 639.55,190.775 L 620.5375,190.775 L 620.5375,247.0 L 611.7624999999999,247.0 L 611.7624999999999,190.775 L 592.75,190.775 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 668.8,182 L 698.05,182 C 715.5999999999999,182 715.5999999999999,214.5 698.05,214.5 L 677.5749999999999,214.5 L 677.5749999999999,247.0 L 668.8,247.0 Z
+                 M 677.5749999999999,190.775 L 696.75,190.775 C 706.5,190.775 706.5,205.725 696.75,205.725 L 677.5749999999999,205.725 Z
+                 M 689.5999999999999,213.2 L 713.0,247.0 L 701.5925,247.0 L 683.0999999999999,213.2 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 770.8499999999999,182 L 748.0999999999999,247.0 L 757.7524999999999,247.0 L 770.8499999999999,196.3 L 783.9474999999999,247.0 L 793.5999999999999,247.0 Z
+                 M 757.8499999999999,223.6 L 783.8499999999999,223.6 L 783.8499999999999,232.375 L 757.8499999999999,232.375 Z"
+              fill="#090D16" />
+    
+        
+            <text x="603.8" y="266.5" font-family="system-ui, -apple-system, 'Geist', 'Satoshi', 'Inter', sans-serif" 
+                  font-size="13.0px" font-weight="600" letter-spacing="27.3px" fill="#475569" text-anchor="middle">
+                AI WORKSPACE
+            </text>
+        
+    </g>
+    
+    </g>
+    <text x="1480" y="575" font-family="system-ui, sans-serif" font-size="16px" fill="#64748B" text-anchor="middle">On Light Background</text>
+
+    <!-- 2. Stacked Logo -->
+    <text x="80" y="650" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">2. STACKED LOGO</text>
+    <rect x="80" y="670" width="880" height="420" rx="20" fill="#0B1020" stroke="#1E293B" stroke-width="2"/>
+    <g transform="translate(120, 680)">
+        
+    <g id="bb_s_d_horizon_rise_mark">
+        <circle cx="400" cy="150" r="60.0" fill="url(#bb_s_d_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 256.0,246.0 Q 400,188.4 544.0,246.0 Q 400,201.2 256.0,246.0 Z" 
+              fill="url(#bb_s_d_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 352.0,102.0 Q 400,150 394.4,144.4 Q 400,150 352.0,102.0 Z
+                 M 448.0,102.0 Q 400,150 405.6,144.4 Q 400,150 448.0,102.0 Z
+                 M 352.0,198.0 Q 400,150 394.4,155.6 Q 400,150 352.0,198.0 Z
+                 M 448.0,198.0 Q 400,150 405.6,155.6 Q 400,150 448.0,198.0 Z"
+              fill="url(#bb_s_d_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 300.0,150 Q 400,139.6 400,150 Q 400,160.4 300.0,150 Z
+                 M 500.0,150 Q 400,139.6 400,150 Q 400,160.4 500.0,150 Z"
+              fill="url(#bb_s_d_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 400,34.0 Q 387.2,150 400,150 Q 412.8,150 400,34.0 Z
+                 M 400,254.0 Q 387.2,150 400,150 Q 412.8,150 400,254.0 Z"
+              fill="url(#bb_s_d_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="400,140.4 409.6,150 400,159.6 390.4,150" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+        
+    <g id="bb_s_d_wordmark_group">
+        
+        <path d="M 247.0,320 L 227.75,375.0 L 235.9175,375.0 L 247.0,332.1 L 258.0825,375.0 L 266.25,375.0 Z
+                 M 236.0,355.2 L 258.0,355.2 L 258.0,362.625 L 236.0,362.625 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 326.75,332.1 C 321.25,322.75 299.25,322.75 299.25,337.6 C 299.25,348.6 328.4,346.4 328.4,359.6 C 328.4,373.9 302.0,373.9 295.4,362.9 L 302.825,360.7 C 300.9,367.3 320.7,367.3 320.7,359.6 C 320.7,349.7 291.55,350.8 291.55,337.6 C 291.55,324.4 318.5,324.4 326.75,332.1 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 354.25,320 L 393.85,320 L 393.85,327.425 L 377.7625,327.425 L 377.7625,375.0 L 370.33750000000003,375.0 L 370.33750000000003,327.425 L 354.25,327.425 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 418.6,320 L 443.35,320 C 458.20000000000005,320 458.20000000000005,347.5 443.35,347.5 L 426.02500000000003,347.5 L 426.02500000000003,375.0 L 418.6,375.0 Z
+                 M 426.02500000000003,327.425 L 442.25,327.425 C 450.5,327.425 450.5,340.075 442.25,340.075 L 426.02500000000003,340.075 Z
+                 M 436.20000000000005,346.4 L 456.0,375.0 L 446.3475,375.0 L 430.70000000000005,346.4 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 504.95000000000005,320 L 485.70000000000005,375.0 L 493.86750000000006,375.0 L 504.95000000000005,332.1 L 516.0325,375.0 L 524.2,375.0 Z
+                 M 493.95000000000005,355.2 L 515.95,355.2 L 515.95,362.625 L 493.95000000000005,362.625 Z"
+              fill="#FFFFFF" />
+    
+        
+            <text x="363.6" y="391.5" font-family="system-ui, -apple-system, 'Geist', 'Satoshi', 'Inter', sans-serif" 
+                  font-size="11.0px" font-weight="600" letter-spacing="23.099999999999998px" fill="#A1A7BB" text-anchor="middle">
+                AI WORKSPACE
+            </text>
+        
+    </g>
+    
+    </g>
+    <text x="520" y="1060" font-family="system-ui, sans-serif" font-size="16px" fill="#A1A7BB" text-anchor="middle">On Dark Background</text>
+
+    <rect x="1040" y="670" width="880" height="420" rx="20" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+    <g transform="translate(1080, 680)">
+        
+    <g id="bb_s_l_horizon_rise_mark">
+        <circle cx="400" cy="150" r="60.0" fill="url(#bb_s_l_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 256.0,246.0 Q 400,188.4 544.0,246.0 Q 400,201.2 256.0,246.0 Z" 
+              fill="url(#bb_s_l_horizonLightGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 352.0,102.0 Q 400,150 394.4,144.4 Q 400,150 352.0,102.0 Z
+                 M 448.0,102.0 Q 400,150 405.6,144.4 Q 400,150 448.0,102.0 Z
+                 M 352.0,198.0 Q 400,150 394.4,155.6 Q 400,150 352.0,198.0 Z
+                 M 448.0,198.0 Q 400,150 405.6,155.6 Q 400,150 448.0,198.0 Z"
+              fill="url(#bb_s_l_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 300.0,150 Q 400,139.6 400,150 Q 400,160.4 300.0,150 Z
+                 M 500.0,150 Q 400,139.6 400,150 Q 400,160.4 500.0,150 Z"
+              fill="url(#bb_s_l_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 400,34.0 Q 387.2,150 400,150 Q 412.8,150 400,34.0 Z
+                 M 400,254.0 Q 387.2,150 400,150 Q 412.8,150 400,254.0 Z"
+              fill="url(#bb_s_l_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="400,140.4 409.6,150 400,159.6 390.4,150" 
+                 fill="#090D16" opacity="0.95"/>
+    </g>
+    
+        
+    <g id="bb_s_l_wordmark_group">
+        
+        <path d="M 247.0,320 L 227.75,375.0 L 235.9175,375.0 L 247.0,332.1 L 258.0825,375.0 L 266.25,375.0 Z
+                 M 236.0,355.2 L 258.0,355.2 L 258.0,362.625 L 236.0,362.625 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 326.75,332.1 C 321.25,322.75 299.25,322.75 299.25,337.6 C 299.25,348.6 328.4,346.4 328.4,359.6 C 328.4,373.9 302.0,373.9 295.4,362.9 L 302.825,360.7 C 300.9,367.3 320.7,367.3 320.7,359.6 C 320.7,349.7 291.55,350.8 291.55,337.6 C 291.55,324.4 318.5,324.4 326.75,332.1 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 354.25,320 L 393.85,320 L 393.85,327.425 L 377.7625,327.425 L 377.7625,375.0 L 370.33750000000003,375.0 L 370.33750000000003,327.425 L 354.25,327.425 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 418.6,320 L 443.35,320 C 458.20000000000005,320 458.20000000000005,347.5 443.35,347.5 L 426.02500000000003,347.5 L 426.02500000000003,375.0 L 418.6,375.0 Z
+                 M 426.02500000000003,327.425 L 442.25,327.425 C 450.5,327.425 450.5,340.075 442.25,340.075 L 426.02500000000003,340.075 Z
+                 M 436.20000000000005,346.4 L 456.0,375.0 L 446.3475,375.0 L 430.70000000000005,346.4 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 504.95000000000005,320 L 485.70000000000005,375.0 L 493.86750000000006,375.0 L 504.95000000000005,332.1 L 516.0325,375.0 L 524.2,375.0 Z
+                 M 493.95000000000005,355.2 L 515.95,355.2 L 515.95,362.625 L 493.95000000000005,362.625 Z"
+              fill="#090D16" />
+    
+        
+            <text x="363.6" y="391.5" font-family="system-ui, -apple-system, 'Geist', 'Satoshi', 'Inter', sans-serif" 
+                  font-size="11.0px" font-weight="600" letter-spacing="23.099999999999998px" fill="#475569" text-anchor="middle">
+                AI WORKSPACE
+            </text>
+        
+    </g>
+    
+    </g>
+    <text x="1480" y="1060" font-family="system-ui, sans-serif" font-size="16px" fill="#64748B" text-anchor="middle">On Light Background</text>
+
+    <!-- SECTION 3 & 4: LOGO MARK ONLY & APP ICON -->
+    <text x="80" y="1140" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">3. LOGO MARK (SYMBOL ONLY)</text>
+    <rect x="80" y="1160" width="270" height="270" rx="20" fill="#0B1020" stroke="#1E293B" stroke-width="2"/>
+    
+    <g id="bb_m1_horizon_rise_mark">
+        <circle cx="215" cy="1295" r="45.0" fill="url(#bb_m1_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 107.0,1367.0 Q 215,1323.8 323.0,1367.0 Q 215,1333.4 107.0,1367.0 Z" 
+              fill="url(#bb_m1_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 179.0,1259.0 Q 215,1295 210.8,1290.8 Q 215,1295 179.0,1259.0 Z
+                 M 251.0,1259.0 Q 215,1295 219.2,1290.8 Q 215,1295 251.0,1259.0 Z
+                 M 179.0,1331.0 Q 215,1295 210.8,1299.2 Q 215,1295 179.0,1331.0 Z
+                 M 251.0,1331.0 Q 215,1295 219.2,1299.2 Q 215,1295 251.0,1331.0 Z"
+              fill="url(#bb_m1_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 140.0,1295 Q 215,1287.2 215,1295 Q 215,1302.8 140.0,1295 Z
+                 M 290.0,1295 Q 215,1287.2 215,1295 Q 215,1302.8 290.0,1295 Z"
+              fill="url(#bb_m1_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 215,1208.0 Q 205.4,1295 215,1295 Q 224.6,1295 215,1208.0 Z
+                 M 215,1373.0 Q 205.4,1295 215,1295 Q 224.6,1295 215,1373.0 Z"
+              fill="url(#bb_m1_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="215,1287.8 222.2,1295 215,1302.2 207.8,1295" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+
+    <rect x="385" y="1160" width="270" height="270" rx="20" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+    
+    <g id="bb_m2_horizon_rise_mark">
+        <circle cx="520" cy="1295" r="45.0" fill="url(#bb_m2_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 412.0,1367.0 Q 520,1323.8 628.0,1367.0 Q 520,1333.4 412.0,1367.0 Z" 
+              fill="url(#bb_m2_horizonLightGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 484.0,1259.0 Q 520,1295 515.8,1290.8 Q 520,1295 484.0,1259.0 Z
+                 M 556.0,1259.0 Q 520,1295 524.2,1290.8 Q 520,1295 556.0,1259.0 Z
+                 M 484.0,1331.0 Q 520,1295 515.8,1299.2 Q 520,1295 484.0,1331.0 Z
+                 M 556.0,1331.0 Q 520,1295 524.2,1299.2 Q 520,1295 556.0,1331.0 Z"
+              fill="url(#bb_m2_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 445.0,1295 Q 520,1287.2 520,1295 Q 520,1302.8 445.0,1295 Z
+                 M 595.0,1295 Q 520,1287.2 520,1295 Q 520,1302.8 595.0,1295 Z"
+              fill="url(#bb_m2_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 520,1208.0 Q 510.4,1295 520,1295 Q 529.6,1295 520,1208.0 Z
+                 M 520,1373.0 Q 510.4,1295 520,1295 Q 529.6,1295 520,1373.0 Z"
+              fill="url(#bb_m2_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="520,1287.8 527.2,1295 520,1302.2 512.8,1295" 
+                 fill="#090D16" opacity="0.95"/>
+    </g>
+    
+
+    <rect x="690" y="1160" width="270" height="270" rx="20" fill="#090D16" stroke="#1E293B" stroke-width="2"/>
+    
+    <g id="bb_m3_horizon_rise_mark">
+        
+        
+        <!-- Horizon Arc -->
+        <path d="M 717.0,1367.0 Q 825,1323.8 933.0,1367.0 Q 825,1333.4 717.0,1367.0 Z" 
+              fill="#FFFFFF" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 789.0,1259.0 Q 825,1295 820.8,1290.8 Q 825,1295 789.0,1259.0 Z
+                 M 861.0,1259.0 Q 825,1295 829.2,1290.8 Q 825,1295 861.0,1259.0 Z
+                 M 789.0,1331.0 Q 825,1295 820.8,1299.2 Q 825,1295 789.0,1331.0 Z
+                 M 861.0,1331.0 Q 825,1295 829.2,1299.2 Q 825,1295 861.0,1331.0 Z"
+              fill="#FFFFFF" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 750.0,1295 Q 825,1287.2 825,1295 Q 825,1302.8 750.0,1295 Z
+                 M 900.0,1295 Q 825,1287.2 825,1295 Q 825,1302.8 900.0,1295 Z"
+              fill="#FFFFFF" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 825,1208.0 Q 815.4,1295 825,1295 Q 834.6,1295 825,1208.0 Z
+                 M 825,1373.0 Q 815.4,1295 825,1295 Q 834.6,1295 825,1373.0 Z"
+              fill="#FFFFFF" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="825,1287.8 832.2,1295 825,1302.2 817.8,1295" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+
+    <text x="1040" y="1140" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">4. APP ICON (ROUNDED SQUARE)</text>
+    <rect x="1040" y="1160" width="270" height="270" rx="58" ry="58" fill="url(#bb_appIconBg)" stroke="#6D5DF6" stroke-width="3" stroke-opacity="0.4"/>
+    
+    <g id="bb_app_horizon_rise_mark">
+        <circle cx="1175" cy="1290" r="48.75" fill="url(#bb_app_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 1058.0,1368.0 Q 1175,1321.2 1292.0,1368.0 Q 1175,1331.6 1058.0,1368.0 Z" 
+              fill="url(#bb_app_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 1136.0,1251.0 Q 1175,1290 1170.45,1285.45 Q 1175,1290 1136.0,1251.0 Z
+                 M 1214.0,1251.0 Q 1175,1290 1179.55,1285.45 Q 1175,1290 1214.0,1251.0 Z
+                 M 1136.0,1329.0 Q 1175,1290 1170.45,1294.55 Q 1175,1290 1136.0,1329.0 Z
+                 M 1214.0,1329.0 Q 1175,1290 1179.55,1294.55 Q 1175,1290 1214.0,1329.0 Z"
+              fill="url(#bb_app_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 1093.75,1290 Q 1175,1281.55 1175,1290 Q 1175,1298.45 1093.75,1290 Z
+                 M 1256.25,1290 Q 1175,1281.55 1175,1290 Q 1175,1298.45 1256.25,1290 Z"
+              fill="url(#bb_app_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 1175,1195.75 Q 1164.6,1290 1175,1290 Q 1185.4,1290 1175,1195.75 Z
+                 M 1175,1374.5 Q 1164.6,1290 1175,1290 Q 1185.4,1290 1175,1374.5 Z"
+              fill="url(#bb_app_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="1175,1282.2 1182.8,1290 1175,1297.8 1167.2,1290" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+
+    <!-- SECTION 5 & 6: FAVICON SET & MONOCHROME -->
+    <text x="80" y="1480" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">5. FAVICON SET</text>
+    <g transform="translate(80, 1510)">
+        <!-- 16x16 -->
+        <rect x="0" y="30" width="50" height="50" rx="8" fill="#0B1020" stroke="#1E293B"/>
+        
+    <g id="fav16_horizon_rise_mark">
+        <circle cx="25" cy="54" r="8.25" fill="url(#fav16_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 5.199999999999999,67.2 Q 25,59.28 44.8,67.2 Q 25,61.04 5.199999999999999,67.2 Z" 
+              fill="url(#fav16_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 18.4,47.4 Q 25,54 24.23,53.23 Q 25,54 18.4,47.4 Z
+                 M 31.6,47.4 Q 25,54 25.77,53.23 Q 25,54 31.6,47.4 Z
+                 M 18.4,60.6 Q 25,54 24.23,54.77 Q 25,54 18.4,60.6 Z
+                 M 31.6,60.6 Q 25,54 25.77,54.77 Q 25,54 31.6,60.6 Z"
+              fill="url(#fav16_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 11.25,54 Q 25,52.57 25,54 Q 25,55.43 11.25,54 Z
+                 M 38.75,54 Q 25,52.57 25,54 Q 25,55.43 38.75,54 Z"
+              fill="url(#fav16_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 25,38.05 Q 23.24,54 25,54 Q 26.76,54 25,38.05 Z
+                 M 25,68.3 Q 23.24,54 25,54 Q 26.76,54 25,68.3 Z"
+              fill="url(#fav16_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="25,52.68 26.32,54 25,55.32 23.68,54" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+        <text x="25" y="100" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB" text-anchor="middle">16x16</text>
+
+        <!-- 32x32 -->
+        <rect x="100" y="20" width="70" height="70" rx="12" fill="#0B1020" stroke="#1E293B"/>
+        
+    <g id="fav32_horizon_rise_mark">
+        <circle cx="135" cy="54" r="12.0" fill="url(#fav32_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 106.2,73.2 Q 135,61.68 163.8,73.2 Q 135,64.24 106.2,73.2 Z" 
+              fill="url(#fav32_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 125.4,44.4 Q 135,54 133.88,52.88 Q 135,54 125.4,44.4 Z
+                 M 144.6,44.4 Q 135,54 136.12,52.88 Q 135,54 144.6,44.4 Z
+                 M 125.4,63.6 Q 135,54 133.88,55.12 Q 135,54 125.4,63.6 Z
+                 M 144.6,63.6 Q 135,54 136.12,55.12 Q 135,54 144.6,63.6 Z"
+              fill="url(#fav32_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 115.0,54 Q 135,51.92 135,54 Q 135,56.08 115.0,54 Z
+                 M 155.0,54 Q 135,51.92 135,54 Q 135,56.08 155.0,54 Z"
+              fill="url(#fav32_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 135,30.8 Q 132.44,54 135,54 Q 137.56,54 135,30.8 Z
+                 M 135,74.8 Q 132.44,54 135,54 Q 137.56,54 135,74.8 Z"
+              fill="url(#fav32_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="135,52.08 136.92,54 135,55.92 133.08,54" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+        <text x="135" y="115" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB" text-anchor="middle">32x32</text>
+
+        <!-- 48x48 -->
+        <rect x="220" y="10" width="90" height="90" rx="16" fill="#0B1020" stroke="#1E293B"/>
+        
+    <g id="fav48_horizon_rise_mark">
+        <circle cx="265" cy="54" r="15.75" fill="url(#fav48_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 227.2,79.2 Q 265,64.08 302.8,79.2 Q 265,67.44 227.2,79.2 Z" 
+              fill="url(#fav48_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 252.4,41.4 Q 265,54 263.53,52.53 Q 265,54 252.4,41.4 Z
+                 M 277.6,41.4 Q 265,54 266.47,52.53 Q 265,54 277.6,41.4 Z
+                 M 252.4,66.6 Q 265,54 263.53,55.47 Q 265,54 252.4,66.6 Z
+                 M 277.6,66.6 Q 265,54 266.47,55.47 Q 265,54 277.6,66.6 Z"
+              fill="url(#fav48_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 238.75,54 Q 265,51.27 265,54 Q 265,56.73 238.75,54 Z
+                 M 291.25,54 Q 265,51.27 265,54 Q 265,56.73 291.25,54 Z"
+              fill="url(#fav48_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 265,23.55 Q 261.64,54 265,54 Q 268.36,54 265,23.55 Z
+                 M 265,81.3 Q 261.64,54 265,54 Q 268.36,54 265,81.3 Z"
+              fill="url(#fav48_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="265,51.48 267.52,54 265,56.52 262.48,54" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+        <text x="265" y="125" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB" text-anchor="middle">48x48</text>
+
+        <!-- 64x64 -->
+        <rect x="360" y="0" width="110" height="110" rx="20" fill="#0B1020" stroke="#1E293B"/>
+        
+    <g id="fav64_horizon_rise_mark">
+        <circle cx="415" cy="54" r="19.5" fill="url(#fav64_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 368.2,85.2 Q 415,66.48 461.8,85.2 Q 415,70.64 368.2,85.2 Z" 
+              fill="url(#fav64_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 399.4,38.4 Q 415,54 413.18,52.18 Q 415,54 399.4,38.4 Z
+                 M 430.6,38.4 Q 415,54 416.82,52.18 Q 415,54 430.6,38.4 Z
+                 M 399.4,69.6 Q 415,54 413.18,55.82 Q 415,54 399.4,69.6 Z
+                 M 430.6,69.6 Q 415,54 416.82,55.82 Q 415,54 430.6,69.6 Z"
+              fill="url(#fav64_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 382.5,54 Q 415,50.62 415,54 Q 415,57.38 382.5,54 Z
+                 M 447.5,54 Q 415,50.62 415,54 Q 415,57.38 447.5,54 Z"
+              fill="url(#fav64_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 415,16.299999999999997 Q 410.84,54 415,54 Q 419.16,54 415,16.299999999999997 Z
+                 M 415,87.80000000000001 Q 410.84,54 415,54 Q 419.16,54 415,87.80000000000001 Z"
+              fill="url(#fav64_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="415,50.88 418.12,54 415,57.12 411.88,54" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+        <text x="415" y="135" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB" text-anchor="middle">64x64</text>
+    </g>
+
+    <text x="1040" y="1480" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">6. MONOCHROME VERSIONS</text>
+    <g transform="translate(1040, 1510)">
+        <rect x="0" y="0" width="200" height="120" rx="14" fill="#F8FAFC"/>
+        
+    <g id="mono1_horizon_rise_mark">
+        
+        
+        <!-- Horizon Arc -->
+        <path d="M 46.0,96.0 Q 100,74.4 154.0,96.0 Q 100,79.2 46.0,96.0 Z" 
+              fill="#090D16" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 82.0,42.0 Q 100,60 97.9,57.9 Q 100,60 82.0,42.0 Z
+                 M 118.0,42.0 Q 100,60 102.1,57.9 Q 100,60 118.0,42.0 Z
+                 M 82.0,78.0 Q 100,60 97.9,62.1 Q 100,60 82.0,78.0 Z
+                 M 118.0,78.0 Q 100,60 102.1,62.1 Q 100,60 118.0,78.0 Z"
+              fill="#090D16" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 62.5,60 Q 100,56.1 100,60 Q 100,63.9 62.5,60 Z
+                 M 137.5,60 Q 100,56.1 100,60 Q 100,63.9 137.5,60 Z"
+              fill="#090D16" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 100,16.5 Q 95.2,60 100,60 Q 104.8,60 100,16.5 Z
+                 M 100,99.0 Q 95.2,60 100,60 Q 104.8,60 100,99.0 Z"
+              fill="#090D16" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="100,56.4 103.6,60 100,63.6 96.4,60" 
+                 fill="#090D16" opacity="0.95"/>
+    </g>
+    
+        <text x="100" y="-10" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB" text-anchor="middle">Black on Light</text>
+
+        <rect x="225" y="0" width="200" height="120" rx="14" fill="#0B1020"/>
+        
+    <g id="mono2_horizon_rise_mark">
+        
+        
+        <!-- Horizon Arc -->
+        <path d="M 271.0,96.0 Q 325,74.4 379.0,96.0 Q 325,79.2 271.0,96.0 Z" 
+              fill="#FFFFFF" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 307.0,42.0 Q 325,60 322.9,57.9 Q 325,60 307.0,42.0 Z
+                 M 343.0,42.0 Q 325,60 327.1,57.9 Q 325,60 343.0,42.0 Z
+                 M 307.0,78.0 Q 325,60 322.9,62.1 Q 325,60 307.0,78.0 Z
+                 M 343.0,78.0 Q 325,60 327.1,62.1 Q 325,60 343.0,78.0 Z"
+              fill="#FFFFFF" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 287.5,60 Q 325,56.1 325,60 Q 325,63.9 287.5,60 Z
+                 M 362.5,60 Q 325,56.1 325,60 Q 325,63.9 362.5,60 Z"
+              fill="#FFFFFF" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 325,16.5 Q 320.2,60 325,60 Q 329.8,60 325,16.5 Z
+                 M 325,99.0 Q 320.2,60 325,60 Q 329.8,60 325,99.0 Z"
+              fill="#FFFFFF" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="325,56.4 328.6,60 325,63.6 321.4,60" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+        <text x="325" y="-10" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB" text-anchor="middle">White on Dark</text>
+
+        <rect x="450" y="0" width="200" height="120" rx="14" fill="#FFFFFF"/>
+        
+    <g id="mono3_horizon_rise_mark">
+        
+        
+        <!-- Horizon Arc -->
+        <path d="M 496.0,96.0 Q 550,74.4 604.0,96.0 Q 550,79.2 496.0,96.0 Z" 
+              fill="#090D16" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 532.0,42.0 Q 550,60 547.9,57.9 Q 550,60 532.0,42.0 Z
+                 M 568.0,42.0 Q 550,60 552.1,57.9 Q 550,60 568.0,42.0 Z
+                 M 532.0,78.0 Q 550,60 547.9,62.1 Q 550,60 532.0,78.0 Z
+                 M 568.0,78.0 Q 550,60 552.1,62.1 Q 550,60 568.0,78.0 Z"
+              fill="#090D16" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 512.5,60 Q 550,56.1 550,60 Q 550,63.9 512.5,60 Z
+                 M 587.5,60 Q 550,56.1 550,60 Q 550,63.9 587.5,60 Z"
+              fill="#090D16" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 550,16.5 Q 545.2,60 550,60 Q 554.8,60 550,16.5 Z
+                 M 550,99.0 Q 545.2,60 550,60 Q 554.8,60 550,99.0 Z"
+              fill="#090D16" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="550,56.4 553.6,60 550,63.6 546.4,60" 
+                 fill="#090D16" opacity="0.95"/>
+    </g>
+    
+        <text x="550" y="-10" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB" text-anchor="middle">Black</text>
+
+        <rect x="675" y="0" width="200" height="120" rx="14" fill="#000000"/>
+        
+    <g id="mono4_horizon_rise_mark">
+        
+        
+        <!-- Horizon Arc -->
+        <path d="M 721.0,96.0 Q 775,74.4 829.0,96.0 Q 775,79.2 721.0,96.0 Z" 
+              fill="#FFFFFF" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 757.0,42.0 Q 775,60 772.9,57.9 Q 775,60 757.0,42.0 Z
+                 M 793.0,42.0 Q 775,60 777.1,57.9 Q 775,60 793.0,42.0 Z
+                 M 757.0,78.0 Q 775,60 772.9,62.1 Q 775,60 757.0,78.0 Z
+                 M 793.0,78.0 Q 775,60 777.1,62.1 Q 775,60 793.0,78.0 Z"
+              fill="#FFFFFF" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 737.5,60 Q 775,56.1 775,60 Q 775,63.9 737.5,60 Z
+                 M 812.5,60 Q 775,56.1 775,60 Q 775,63.9 812.5,60 Z"
+              fill="#FFFFFF" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 775,16.5 Q 770.2,60 775,60 Q 779.8,60 775,16.5 Z
+                 M 775,99.0 Q 770.2,60 775,60 Q 779.8,60 775,99.0 Z"
+              fill="#FFFFFF" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="775,56.4 778.6,60 775,63.6 771.4,60" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+        <text x="775" y="-10" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB" text-anchor="middle">White</text>
+    </g>
+
+    <!-- SECTION 7 & 8: CLEAR SPACE & MINIMUM SIZE -->
+    <text x="80" y="1730" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">7. CLEAR SPACE</text>
+    <rect x="80" y="1750" width="880" height="240" rx="20" fill="#0B1020" stroke="#1E293B" stroke-width="2"/>
+    <g transform="translate(110, 1780)">
+        <rect x="100" y="20" width="620" height="140" fill="none" stroke="#6D5DF6" stroke-width="2" stroke-dasharray="6,6"/>
+        
+    <g id="cs_horizon_rise_mark">
+        <circle cx="180" cy="90" r="28.5" fill="url(#cs_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 111.6,135.6 Q 180,108.24000000000001 248.4,135.6 Q 180,114.32 111.6,135.6 Z" 
+              fill="url(#cs_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 157.2,67.2 Q 180,90 177.34,87.34 Q 180,90 157.2,67.2 Z
+                 M 202.8,67.2 Q 180,90 182.66,87.34 Q 180,90 202.8,67.2 Z
+                 M 157.2,112.8 Q 180,90 177.34,92.66 Q 180,90 157.2,112.8 Z
+                 M 202.8,112.8 Q 180,90 182.66,92.66 Q 180,90 202.8,112.8 Z"
+              fill="url(#cs_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 132.5,90 Q 180,85.06 180,90 Q 180,94.94 132.5,90 Z
+                 M 227.5,90 Q 180,85.06 180,90 Q 180,94.94 227.5,90 Z"
+              fill="url(#cs_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 180,34.9 Q 173.92,90 180,90 Q 186.08,90 180,34.9 Z
+                 M 180,139.4 Q 173.92,90 180,90 Q 186.08,90 180,139.4 Z"
+              fill="url(#cs_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="180,85.44 184.56,90 180,94.56 175.44,90" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+        
+    <g id="cs_wordmark_group">
+        
+        <path d="M 304.0,70 L 291.75,105.0 L 296.9475,105.0 L 304.0,77.7 L 311.0525,105.0 L 316.25,105.0 Z
+                 M 297.0,92.4 L 311.0,92.4 L 311.0,97.125 L 297.0,97.125 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 354.75,77.7 C 351.25,71.75 337.25,71.75 337.25,81.2 C 337.25,88.2 355.8,86.8 355.8,95.2 C 355.8,104.3 339.0,104.3 334.8,97.3 L 339.52500000000003,95.9 C 338.3,100.1 350.9,100.1 350.9,95.2 C 350.9,88.9 332.35,89.6 332.35,81.2 C 332.35,72.8 349.5,72.8 354.75,77.7 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 372.25,70 L 397.45,70 L 397.45,74.725 L 387.21250000000003,74.725 L 387.21250000000003,105.0 L 382.4875,105.0 L 382.4875,74.725 L 372.25,74.725 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 413.2,70 L 428.95,70 C 438.4,70 438.4,87.5 428.95,87.5 L 417.925,87.5 L 417.925,105.0 L 413.2,105.0 Z
+                 M 417.925,74.725 L 428.25,74.725 C 433.5,74.725 433.5,82.775 428.25,82.775 L 417.925,82.775 Z
+                 M 424.4,86.8 L 437.0,105.0 L 430.8575,105.0 L 420.9,86.8 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 468.15,70 L 455.9,105.0 L 461.09749999999997,105.0 L 468.15,77.7 L 475.2025,105.0 L 480.4,105.0 Z
+                 M 461.15,92.4 L 475.15,92.4 L 475.15,97.125 L 461.15,97.125 Z"
+              fill="#FFFFFF" />
+    
+        
+            <text x="378.2" y="115.5" font-family="system-ui, -apple-system, 'Geist', 'Satoshi', 'Inter', sans-serif" 
+                  font-size="7.0px" font-weight="600" letter-spacing="14.7px" fill="#A1A7BB" text-anchor="middle">
+                AI WORKSPACE
+            </text>
+        
+    </g>
+    
+        <!-- Margin Callouts -->
+        <text x="120" y="15" font-family="monospace" font-size="12px" fill="#FFC857">x</text>
+        <text x="705" y="15" font-family="monospace" font-size="12px" fill="#FFC857">x</text>
+        <text x="705" y="175" font-family="monospace" font-size="12px" fill="#FFC857">x</text>
+        <text x="120" y="175" font-family="monospace" font-size="12px" fill="#FFC857">x</text>
+    </g>
+    <text x="210" y="2015" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">Clear space (x) = Height of the star. No text or graphics should enter this area.</text>
+
+    <text x="1040" y="1730" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">8. MINIMUM SIZE</text>
+    <rect x="1040" y="1750" width="880" height="240" rx="20" fill="#0B1020" stroke="#1E293B" stroke-width="2"/>
+    <g transform="translate(1080, 1780)">
+        <!-- Horizontal Min (120px equivalent) -->
+        <g transform="translate(180, 50)">
+            
+    <g id="ms_h_horizon_rise_mark">
+        <circle cx="0" cy="0" r="16.5" fill="url(#ms_h_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M -39.6,26.4 Q 0,10.56 39.6,26.4 Q 0,14.08 -39.6,26.4 Z" 
+              fill="url(#ms_h_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M -13.2,-13.2 Q 0,0 -1.54,-1.54 Q 0,0 -13.2,-13.2 Z
+                 M 13.2,-13.2 Q 0,0 1.54,-1.54 Q 0,0 13.2,-13.2 Z
+                 M -13.2,13.2 Q 0,0 -1.54,1.54 Q 0,0 -13.2,13.2 Z
+                 M 13.2,13.2 Q 0,0 1.54,1.54 Q 0,0 13.2,13.2 Z"
+              fill="url(#ms_h_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M -27.5,0 Q 0,-2.86 0,0 Q 0,2.86 -27.5,0 Z
+                 M 27.5,0 Q 0,-2.86 0,0 Q 0,2.86 27.5,0 Z"
+              fill="url(#ms_h_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 0,-31.9 Q -3.52,0 0,0 Q 3.52,0 0,-31.9 Z
+                 M 0,28.6 Q -3.52,0 0,0 Q 3.52,0 0,28.6 Z"
+              fill="url(#ms_h_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="0,-2.64 2.64,0 0,2.64 -2.64,0" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+            
+    <g id="ms_h_wordmark_group">
+        
+        <path d="M 63.8,-15 L 56.1,7.0 L 59.367000000000004,7.0 L 63.8,-10.16 L 68.233,7.0 L 71.5,7.0 Z
+                 M 59.4,-0.9199999999999999 L 68.2,-0.9199999999999999 L 68.2,2.0500000000000003 L 59.4,2.0500000000000003 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 95.7,-10.16 C 93.5,-13.9 84.7,-13.9 84.7,-7.96 C 84.7,-3.5600000000000005 96.36000000000001,-4.4399999999999995 96.36000000000001,0.8399999999999999 C 96.36000000000001,6.559999999999999 85.80000000000001,6.559999999999999 83.16000000000001,2.16 L 86.13000000000001,1.2800000000000011 C 85.36,3.9200000000000017 93.28,3.9200000000000017 93.28,0.8399999999999999 C 93.28,-3.119999999999999 81.62,-2.6799999999999997 81.62,-7.96 C 81.62,-13.24 92.4,-13.24 95.7,-10.16 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 106.7,-15 L 122.54,-15 L 122.54,-12.03 L 116.105,-12.03 L 116.105,7.0 L 113.135,7.0 L 113.135,-12.03 L 106.7,-12.03 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 132.44,-15 L 142.34,-15 C 148.28,-15 148.28,-4.0 142.34,-4.0 L 135.41,-4.0 L 135.41,7.0 L 132.44,7.0 Z
+                 M 135.41,-12.03 L 141.9,-12.03 C 145.2,-12.03 145.2,-6.970000000000001 141.9,-6.970000000000001 L 135.41,-6.970000000000001 Z
+                 M 139.48,-4.4399999999999995 L 147.4,7.0 L 143.53900000000002,7.0 L 137.28,-4.4399999999999995 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 166.98000000000002,-15 L 159.28,7.0 L 162.547,7.0 L 166.98000000000002,-10.16 L 171.413,7.0 L 174.68,7.0 Z
+                 M 162.58,-0.9199999999999999 L 171.38,-0.9199999999999999 L 171.38,2.0500000000000003 L 162.58,2.0500000000000003 Z"
+              fill="#FFFFFF" />
+    
+        
+            <text x="110.44" y="13.600000000000001" font-family="system-ui, -apple-system, 'Geist', 'Satoshi', 'Inter', sans-serif" 
+                  font-size="4.4px" font-weight="600" letter-spacing="9.24px" fill="#A1A7BB" text-anchor="middle">
+                AI WORKSPACE
+            </text>
+        
+    </g>
+    
+            <line x1="-30" y1="40" x2="220" y2="40" stroke="#A1A7BB" stroke-width="1"/>
+            <line x1="-30" y1="35" x2="-30" y2="45" stroke="#A1A7BB" stroke-width="1"/>
+            <line x1="220" y1="35" x2="220" y2="45" stroke="#A1A7BB" stroke-width="1"/>
+            <text x="95" y="65" font-family="system-ui, sans-serif" font-size="14px" fill="#FFFFFF" text-anchor="middle">120 px</text>
+        </g>
+        <!-- Mark Min (32px) -->
+        <g transform="translate(580, 50)">
+            
+    <g id="ms_m_horizon_rise_mark">
+        <circle cx="0" cy="0" r="10.500000000000002" fill="url(#ms_m_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M -25.200000000000003,16.8 Q 0,6.720000000000001 25.200000000000003,16.8 Q 0,8.96 -25.200000000000003,16.8 Z" 
+              fill="url(#ms_m_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M -8.4,-8.4 Q 0,0 -0.9800000000000001,-0.9800000000000001 Q 0,0 -8.4,-8.4 Z
+                 M 8.4,-8.4 Q 0,0 0.9800000000000001,-0.9800000000000001 Q 0,0 8.4,-8.4 Z
+                 M -8.4,8.4 Q 0,0 -0.9800000000000001,0.9800000000000001 Q 0,0 -8.4,8.4 Z
+                 M 8.4,8.4 Q 0,0 0.9800000000000001,0.9800000000000001 Q 0,0 8.4,8.4 Z"
+              fill="url(#ms_m_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M -17.5,0 Q 0,-1.8200000000000003 0,0 Q 0,1.8200000000000003 -17.5,0 Z
+                 M 17.5,0 Q 0,-1.8200000000000003 0,0 Q 0,1.8200000000000003 17.5,0 Z"
+              fill="url(#ms_m_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 0,-20.3 Q -2.24,0 0,0 Q 2.24,0 0,-20.3 Z
+                 M 0,18.200000000000003 Q -2.24,0 0,0 Q 2.24,0 0,18.200000000000003 Z"
+              fill="url(#ms_m_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="0,-1.6800000000000002 1.6800000000000002,0 0,1.6800000000000002 -1.6800000000000002,0" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+            <line x1="-20" y1="40" x2="20" y2="40" stroke="#A1A7BB" stroke-width="1"/>
+            <line x1="-20" y1="35" x2="-20" y2="45" stroke="#A1A7BB" stroke-width="1"/>
+            <line x1="20" y1="35" x2="20" y2="45" stroke="#A1A7BB" stroke-width="1"/>
+            <text x="0" y="65" font-family="system-ui, sans-serif" font-size="14px" fill="#FFFFFF" text-anchor="middle">32 px</text>
+        </g>
+    </g>
+    <text x="1480" y="2015" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB" text-anchor="middle">Minimum size ensures clarity and legibility.</text>
+
+    <!-- SECTION 9 & 10: INCORRECT USAGE -->
+    <text x="80" y="2060" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">9. INCORRECT USAGE</text>
+    <g transform="translate(80, 2090)">
+        <!-- 1. Stretched -->
+        <rect x="0" y="0" width="340" height="180" rx="16" fill="#0B1020" stroke="#1E293B"/>
+        <g transform="translate(-10, 10) scale(1.3, 0.7)">
+            
+    <g id="err1_horizon_rise_mark">
+        <circle cx="100" cy="100" r="18.75" fill="url(#err1_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 55.0,130.0 Q 100,112.0 145.0,130.0 Q 100,116.0 55.0,130.0 Z" 
+              fill="url(#err1_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 85.0,85.0 Q 100,100 98.25,98.25 Q 100,100 85.0,85.0 Z
+                 M 115.0,85.0 Q 100,100 101.75,98.25 Q 100,100 115.0,85.0 Z
+                 M 85.0,115.0 Q 100,100 98.25,101.75 Q 100,100 85.0,115.0 Z
+                 M 115.0,115.0 Q 100,100 101.75,101.75 Q 100,100 115.0,115.0 Z"
+              fill="url(#err1_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 68.75,100 Q 100,96.75 100,100 Q 100,103.25 68.75,100 Z
+                 M 131.25,100 Q 100,96.75 100,100 Q 100,103.25 131.25,100 Z"
+              fill="url(#err1_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 100,63.75 Q 96.0,100 100,100 Q 104.0,100 100,63.75 Z
+                 M 100,132.5 Q 96.0,100 100,100 Q 104.0,100 100,132.5 Z"
+              fill="url(#err1_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="100,97.0 103.0,100 100,103.0 97.0,100" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+            
+    <g id="err1_wordmark_group">
+        
+        <path d="M 170.0,85 L 161.25,110.0 L 164.9625,110.0 L 170.0,90.5 L 175.0375,110.0 L 178.75,110.0 Z
+                 M 165.0,101.0 L 175.0,101.0 L 175.0,104.375 L 165.0,104.375 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 206.25,90.5 C 203.75,86.25 193.75,86.25 193.75,93.0 C 193.75,98.0 207.0,97.0 207.0,103.0 C 207.0,109.5 195.0,109.5 192.0,104.5 L 195.375,103.5 C 194.5,106.5 203.5,106.5 203.5,103.0 C 203.5,98.5 190.25,99.0 190.25,93.0 C 190.25,87.0 202.5,87.0 206.25,90.5 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 218.75,85 L 236.75,85 L 236.75,88.375 L 229.4375,88.375 L 229.4375,110.0 L 226.0625,110.0 L 226.0625,88.375 L 218.75,88.375 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 248.0,85 L 259.25,85 C 266.0,85 266.0,97.5 259.25,97.5 L 251.375,97.5 L 251.375,110.0 L 248.0,110.0 Z
+                 M 251.375,88.375 L 258.75,88.375 C 262.5,88.375 262.5,94.125 258.75,94.125 L 251.375,94.125 Z
+                 M 256.0,97.0 L 265.0,110.0 L 260.6125,110.0 L 253.5,97.0 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 287.25,85 L 278.5,110.0 L 282.2125,110.0 L 287.25,90.5 L 292.2875,110.0 L 296.0,110.0 Z
+                 M 282.25,101.0 L 292.25,101.0 L 292.25,104.375 L 282.25,104.375 Z"
+              fill="#FFFFFF" />
+    
+        
+    </g>
+    
+        </g>
+        <circle cx="170" cy="150" r="12" fill="#EF4444"/>
+        <text x="170" y="154" font-family="sans-serif" font-size="14px" font-weight="bold" fill="#FFFFFF" text-anchor="middle">✕</text>
+        <text x="170" y="175" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB" text-anchor="middle">Do not stretch</text>
+
+        <!-- 2. Wrong Colors -->
+        <rect x="380" y="0" width="340" height="180" rx="16" fill="#0B1020" stroke="#1E293B"/>
+        <g transform="translate(370, 10)">
+            
+    <g id="err2_horizon_rise_mark">
+        
+        
+        <!-- Horizon Arc -->
+        <path d="M 55.0,130.0 Q 100,112.0 145.0,130.0 Q 100,116.0 55.0,130.0 Z" 
+              fill="#10B981" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 85.0,85.0 Q 100,100 98.25,98.25 Q 100,100 85.0,85.0 Z
+                 M 115.0,85.0 Q 100,100 101.75,98.25 Q 100,100 115.0,85.0 Z
+                 M 85.0,115.0 Q 100,100 98.25,101.75 Q 100,100 85.0,115.0 Z
+                 M 115.0,115.0 Q 100,100 101.75,101.75 Q 100,100 115.0,115.0 Z"
+              fill="#10B981" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 68.75,100 Q 100,96.75 100,100 Q 100,103.25 68.75,100 Z
+                 M 131.25,100 Q 100,96.75 100,100 Q 100,103.25 131.25,100 Z"
+              fill="#10B981" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 100,63.75 Q 96.0,100 100,100 Q 104.0,100 100,63.75 Z
+                 M 100,132.5 Q 96.0,100 100,100 Q 104.0,100 100,132.5 Z"
+              fill="#10B981" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="100,97.0 103.0,100 100,103.0 97.0,100" 
+                 fill="#10B981" opacity="0.95"/>
+    </g>
+    
+            
+    <g id="err2_wordmark_group">
+        
+        <path d="M 170.0,85 L 161.25,110.0 L 164.9625,110.0 L 170.0,90.5 L 175.0375,110.0 L 178.75,110.0 Z
+                 M 165.0,101.0 L 175.0,101.0 L 175.0,104.375 L 165.0,104.375 Z"
+              fill="#10B981" />
+    
+        
+        <path d="M 206.25,90.5 C 203.75,86.25 193.75,86.25 193.75,93.0 C 193.75,98.0 207.0,97.0 207.0,103.0 C 207.0,109.5 195.0,109.5 192.0,104.5 L 195.375,103.5 C 194.5,106.5 203.5,106.5 203.5,103.0 C 203.5,98.5 190.25,99.0 190.25,93.0 C 190.25,87.0 202.5,87.0 206.25,90.5 Z"
+              fill="#10B981" />
+    
+        
+        <path d="M 218.75,85 L 236.75,85 L 236.75,88.375 L 229.4375,88.375 L 229.4375,110.0 L 226.0625,110.0 L 226.0625,88.375 L 218.75,88.375 Z"
+              fill="#10B981" />
+    
+        
+        <path d="M 248.0,85 L 259.25,85 C 266.0,85 266.0,97.5 259.25,97.5 L 251.375,97.5 L 251.375,110.0 L 248.0,110.0 Z
+                 M 251.375,88.375 L 258.75,88.375 C 262.5,88.375 262.5,94.125 258.75,94.125 L 251.375,94.125 Z
+                 M 256.0,97.0 L 265.0,110.0 L 260.6125,110.0 L 253.5,97.0 Z"
+              fill="#10B981" />
+    
+        
+        <path d="M 287.25,85 L 278.5,110.0 L 282.2125,110.0 L 287.25,90.5 L 292.2875,110.0 L 296.0,110.0 Z
+                 M 282.25,101.0 L 292.25,101.0 L 292.25,104.375 L 282.25,104.375 Z"
+              fill="#10B981" />
+    
+        
+    </g>
+    
+        </g>
+        <circle cx="550" cy="150" r="12" fill="#EF4444"/>
+        <text x="550" y="154" font-family="sans-serif" font-size="14px" font-weight="bold" fill="#FFFFFF" text-anchor="middle">✕</text>
+        <text x="550" y="175" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB" text-anchor="middle">Do not change colors</text>
+
+        <!-- 3. Heavy Shadow -->
+        <rect x="760" y="0" width="340" height="180" rx="16" fill="#0B1020" stroke="#1E293B"/>
+        <g transform="translate(750, 10)">
+            
+    <g id="err3_horizon_rise_mark">
+        <circle cx="100" cy="100" r="18.75" fill="url(#err3_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 55.0,130.0 Q 100,112.0 145.0,130.0 Q 100,116.0 55.0,130.0 Z" 
+              fill="url(#err3_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 85.0,85.0 Q 100,100 98.25,98.25 Q 100,100 85.0,85.0 Z
+                 M 115.0,85.0 Q 100,100 101.75,98.25 Q 100,100 115.0,85.0 Z
+                 M 85.0,115.0 Q 100,100 98.25,101.75 Q 100,100 85.0,115.0 Z
+                 M 115.0,115.0 Q 100,100 101.75,101.75 Q 100,100 115.0,115.0 Z"
+              fill="url(#err3_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 68.75,100 Q 100,96.75 100,100 Q 100,103.25 68.75,100 Z
+                 M 131.25,100 Q 100,96.75 100,100 Q 100,103.25 131.25,100 Z"
+              fill="url(#err3_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 100,63.75 Q 96.0,100 100,100 Q 104.0,100 100,63.75 Z
+                 M 100,132.5 Q 96.0,100 100,100 Q 104.0,100 100,132.5 Z"
+              fill="url(#err3_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="100,97.0 103.0,100 100,103.0 97.0,100" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+            
+    <g id="err3_wordmark_group">
+        
+        <path d="M 170.0,85 L 161.25,110.0 L 164.9625,110.0 L 170.0,90.5 L 175.0375,110.0 L 178.75,110.0 Z
+                 M 165.0,101.0 L 175.0,101.0 L 175.0,104.375 L 165.0,104.375 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 206.25,90.5 C 203.75,86.25 193.75,86.25 193.75,93.0 C 193.75,98.0 207.0,97.0 207.0,103.0 C 207.0,109.5 195.0,109.5 192.0,104.5 L 195.375,103.5 C 194.5,106.5 203.5,106.5 203.5,103.0 C 203.5,98.5 190.25,99.0 190.25,93.0 C 190.25,87.0 202.5,87.0 206.25,90.5 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 218.75,85 L 236.75,85 L 236.75,88.375 L 229.4375,88.375 L 229.4375,110.0 L 226.0625,110.0 L 226.0625,88.375 L 218.75,88.375 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 248.0,85 L 259.25,85 C 266.0,85 266.0,97.5 259.25,97.5 L 251.375,97.5 L 251.375,110.0 L 248.0,110.0 Z
+                 M 251.375,88.375 L 258.75,88.375 C 262.5,88.375 262.5,94.125 258.75,94.125 L 251.375,94.125 Z
+                 M 256.0,97.0 L 265.0,110.0 L 260.6125,110.0 L 253.5,97.0 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 287.25,85 L 278.5,110.0 L 282.2125,110.0 L 287.25,90.5 L 292.2875,110.0 L 296.0,110.0 Z
+                 M 282.25,101.0 L 292.25,101.0 L 292.25,104.375 L 282.25,104.375 Z"
+              fill="#FFFFFF" />
+    
+        
+    </g>
+    
+        </g>
+        <circle cx="930" cy="150" r="12" fill="#EF4444"/>
+        <text x="930" y="154" font-family="sans-serif" font-size="14px" font-weight="bold" fill="#FFFFFF" text-anchor="middle">✕</text>
+        <text x="930" y="175" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB" text-anchor="middle">Do not add shadows</text>
+
+        <!-- 4. Rotated -->
+        <rect x="1140" y="0" width="340" height="180" rx="16" fill="#0B1020" stroke="#1E293B"/>
+        <g transform="translate(1310, 80) rotate(18)">
+            
+    <g id="err4_horizon_rise_mark">
+        <circle cx="-80" cy="-20" r="18.75" fill="url(#err4_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M -125.0,10.0 Q -80,-8.0 -35.0,10.0 Q -80,-4.0 -125.0,10.0 Z" 
+              fill="url(#err4_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M -95.0,-35.0 Q -80,-20 -81.75,-21.75 Q -80,-20 -95.0,-35.0 Z
+                 M -65.0,-35.0 Q -80,-20 -78.25,-21.75 Q -80,-20 -65.0,-35.0 Z
+                 M -95.0,-5.0 Q -80,-20 -81.75,-18.25 Q -80,-20 -95.0,-5.0 Z
+                 M -65.0,-5.0 Q -80,-20 -78.25,-18.25 Q -80,-20 -65.0,-5.0 Z"
+              fill="url(#err4_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M -111.25,-20 Q -80,-23.25 -80,-20 Q -80,-16.75 -111.25,-20 Z
+                 M -48.75,-20 Q -80,-23.25 -80,-20 Q -80,-16.75 -48.75,-20 Z"
+              fill="url(#err4_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M -80,-56.25 Q -84.0,-20 -80,-20 Q -76.0,-20 -80,-56.25 Z
+                 M -80,12.5 Q -84.0,-20 -80,-20 Q -76.0,-20 -80,12.5 Z"
+              fill="url(#err4_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="-80,-23.0 -77.0,-20 -80,-17.0 -83.0,-20" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+            
+    <g id="err4_wordmark_group">
+        
+        <path d="M -10.0,-35 L -18.75,-10.0 L -15.0375,-10.0 L -10.0,-29.5 L -4.9625,-10.0 L -1.25,-10.0 Z
+                 M -15.0,-19.0 L -5.0,-19.0 L -5.0,-15.625 L -15.0,-15.625 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 26.25,-29.5 C 23.75,-33.75 13.75,-33.75 13.75,-27.0 C 13.75,-22.0 27.0,-23.0 27.0,-17.0 C 27.0,-10.5 15.0,-10.5 12.0,-15.5 L 15.375,-16.5 C 14.5,-13.5 23.5,-13.5 23.5,-17.0 C 23.5,-21.5 10.25,-21.0 10.25,-27.0 C 10.25,-33.0 22.5,-33.0 26.25,-29.5 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 38.75,-35 L 56.75,-35 L 56.75,-31.625 L 49.4375,-31.625 L 49.4375,-10.0 L 46.0625,-10.0 L 46.0625,-31.625 L 38.75,-31.625 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 68.0,-35 L 79.25,-35 C 86.0,-35 86.0,-22.5 79.25,-22.5 L 71.375,-22.5 L 71.375,-10.0 L 68.0,-10.0 Z
+                 M 71.375,-31.625 L 78.75,-31.625 C 82.5,-31.625 82.5,-25.875 78.75,-25.875 L 71.375,-25.875 Z
+                 M 76.0,-23.0 L 85.0,-10.0 L 80.6125,-10.0 L 73.5,-23.0 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 107.25,-35 L 98.5,-10.0 L 102.2125,-10.0 L 107.25,-29.5 L 112.2875,-10.0 L 116.0,-10.0 Z
+                 M 102.25,-19.0 L 112.25,-19.0 L 112.25,-15.625 L 102.25,-15.625 Z"
+              fill="#FFFFFF" />
+    
+        
+    </g>
+    
+        </g>
+        <circle cx="1310" cy="150" r="12" fill="#EF4444"/>
+        <text x="1310" y="154" font-family="sans-serif" font-size="14px" font-weight="bold" fill="#FFFFFF" text-anchor="middle">✕</text>
+        <text x="1310" y="175" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB" text-anchor="middle">Do not rotate</text>
+
+        <!-- 5. Busy Background -->
+        <rect x="1520" y="0" width="320" height="180" rx="16" fill="#D97706"/>
+        <circle cx="1600" cy="50" r="90" fill="#EF4444" opacity="0.6"/>
+        <circle cx="1780" cy="120" r="80" fill="#3B82F6" opacity="0.6"/>
+        <g transform="translate(1510, 10)">
+            
+    <g id="err5_horizon_rise_mark">
+        <circle cx="100" cy="100" r="18.75" fill="url(#err5_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 55.0,130.0 Q 100,112.0 145.0,130.0 Q 100,116.0 55.0,130.0 Z" 
+              fill="url(#err5_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 85.0,85.0 Q 100,100 98.25,98.25 Q 100,100 85.0,85.0 Z
+                 M 115.0,85.0 Q 100,100 101.75,98.25 Q 100,100 115.0,85.0 Z
+                 M 85.0,115.0 Q 100,100 98.25,101.75 Q 100,100 85.0,115.0 Z
+                 M 115.0,115.0 Q 100,100 101.75,101.75 Q 100,100 115.0,115.0 Z"
+              fill="url(#err5_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 68.75,100 Q 100,96.75 100,100 Q 100,103.25 68.75,100 Z
+                 M 131.25,100 Q 100,96.75 100,100 Q 100,103.25 131.25,100 Z"
+              fill="url(#err5_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 100,63.75 Q 96.0,100 100,100 Q 104.0,100 100,63.75 Z
+                 M 100,132.5 Q 96.0,100 100,100 Q 104.0,100 100,132.5 Z"
+              fill="url(#err5_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="100,97.0 103.0,100 100,103.0 97.0,100" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+            
+    <g id="err5_wordmark_group">
+        
+        <path d="M 170.0,85 L 161.25,110.0 L 164.9625,110.0 L 170.0,90.5 L 175.0375,110.0 L 178.75,110.0 Z
+                 M 165.0,101.0 L 175.0,101.0 L 175.0,104.375 L 165.0,104.375 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 206.25,90.5 C 203.75,86.25 193.75,86.25 193.75,93.0 C 193.75,98.0 207.0,97.0 207.0,103.0 C 207.0,109.5 195.0,109.5 192.0,104.5 L 195.375,103.5 C 194.5,106.5 203.5,106.5 203.5,103.0 C 203.5,98.5 190.25,99.0 190.25,93.0 C 190.25,87.0 202.5,87.0 206.25,90.5 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 218.75,85 L 236.75,85 L 236.75,88.375 L 229.4375,88.375 L 229.4375,110.0 L 226.0625,110.0 L 226.0625,88.375 L 218.75,88.375 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 248.0,85 L 259.25,85 C 266.0,85 266.0,97.5 259.25,97.5 L 251.375,97.5 L 251.375,110.0 L 248.0,110.0 Z
+                 M 251.375,88.375 L 258.75,88.375 C 262.5,88.375 262.5,94.125 258.75,94.125 L 251.375,94.125 Z
+                 M 256.0,97.0 L 265.0,110.0 L 260.6125,110.0 L 253.5,97.0 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 287.25,85 L 278.5,110.0 L 282.2125,110.0 L 287.25,90.5 L 292.2875,110.0 L 296.0,110.0 Z
+                 M 282.25,101.0 L 292.25,101.0 L 292.25,104.375 L 282.25,104.375 Z"
+              fill="#FFFFFF" />
+    
+        
+    </g>
+    
+        </g>
+        <circle cx="1680" cy="150" r="12" fill="#EF4444"/>
+        <text x="1680" y="154" font-family="sans-serif" font-size="14px" font-weight="bold" fill="#FFFFFF" text-anchor="middle">✕</text>
+        <text x="1680" y="175" font-family="system-ui, sans-serif" font-size="13px" fill="#FFFFFF" text-anchor="middle">Do not place on busy backgrounds</text>
+    </g>
+
+    <!-- SECTION 11 & 12: COLOR PALETTE & TYPOGRAPHY -->
+    <text x="80" y="2340" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">11. COLOR PALETTE</text>
+    <g transform="translate(80, 2370)">
+        <!-- Color 1 -->
+        <rect x="0" y="0" width="160" height="100" rx="12" fill="#0B1020" stroke="#1E293B" stroke-width="2"/>
+        <text x="80" y="125" font-family="system-ui, sans-serif" font-size="13px" font-weight="600" fill="#FFFFFF" text-anchor="middle">Deep Space Navy</text>
+        <text x="80" y="145" font-family="monospace" font-size="12px" fill="#A1A7BB" text-anchor="middle">#0B1020</text>
+
+        <!-- Color 2 -->
+        <rect x="180" y="0" width="160" height="100" rx="12" fill="#6D5DF6"/>
+        <text x="260" y="125" font-family="system-ui, sans-serif" font-size="13px" font-weight="600" fill="#FFFFFF" text-anchor="middle">Cosmic Purple</text>
+        <text x="260" y="145" font-family="monospace" font-size="12px" fill="#A1A7BB" text-anchor="middle">#6D5DF6</text>
+
+        <!-- Color 3 -->
+        <rect x="360" y="0" width="160" height="100" rx="12" fill="#FFFFFF"/>
+        <text x="440" y="125" font-family="system-ui, sans-serif" font-size="13px" font-weight="600" fill="#FFFFFF" text-anchor="middle">Starlight White</text>
+        <text x="440" y="145" font-family="monospace" font-size="12px" fill="#A1A7BB" text-anchor="middle">#FFFFFF</text>
+
+        <!-- Color 4 -->
+        <rect x="540" y="0" width="160" height="100" rx="12" fill="#FFC857"/>
+        <text x="620" y="125" font-family="system-ui, sans-serif" font-size="13px" font-weight="600" fill="#FFFFFF" text-anchor="middle">Warm Light</text>
+        <text x="620" y="145" font-family="monospace" font-size="12px" fill="#A1A7BB" text-anchor="middle">#FFCE77</text>
+
+        <!-- Color 5 -->
+        <rect x="720" y="0" width="160" height="100" rx="12" fill="#A1A7BB"/>
+        <text x="800" y="125" font-family="system-ui, sans-serif" font-size="13px" font-weight="600" fill="#FFFFFF" text-anchor="middle">Muted Gray</text>
+        <text x="800" y="145" font-family="monospace" font-size="12px" fill="#A1A7BB" text-anchor="middle">#A1A7BB</text>
+    </g>
+
+    <text x="1040" y="2340" font-family="system-ui, sans-serif" font-size="22px" font-weight="700" fill="#FFFFFF" letter-spacing="2px">12. TYPOGRAPHY</text>
+    <g transform="translate(1040, 2370)">
+        <rect x="0" y="0" width="880" height="160" rx="16" fill="#0B1020" stroke="#1E293B" stroke-width="2"/>
+        <text x="40" y="105" font-family="'Geist', 'Satoshi', system-ui, sans-serif" font-size="90px" font-weight="700" fill="#FFFFFF">Aa</text>
+        <text x="210" y="55" font-family="system-ui, sans-serif" font-size="20px" font-weight="700" fill="#FFFFFF">Satoshi</text>
+        <text x="210" y="82" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">(Primary Typeface)</text>
+
+        <text x="500" y="50" font-family="system-ui, sans-serif" font-size="15px" fill="#FFFFFF">ABCDEFGHIJKLMNOPQRSTUVWXYZ</text>
+        <text x="500" y="80" font-family="system-ui, sans-serif" font-size="15px" fill="#FFFFFF">abcdefghijklmnopqrstuvwxyz</text>
+        <text x="500" y="110" font-family="system-ui, sans-serif" font-size="15px" fill="#FFFFFF">0123456789</text>
+    </g>
+
+    <!-- FOOTER INFO -->
+    <rect x="80" y="2590" width="1840" height="220" rx="20" fill="#0B1020" stroke="#1E293B" stroke-width="2"/>
+    <text x="120" y="2640" font-family="system-ui, sans-serif" font-size="20px" font-weight="700" fill="#FFFFFF" letter-spacing="1px">13. FILE FORMATS PROVIDED</text>
+    
+    <g transform="translate(120, 2660)">
+        <g transform="translate(40, 30)">
+            <circle cx="30" cy="30" r="30" fill="#6D5DF6" fill-opacity="0.2"/>
+            <text x="30" y="36" font-family="sans-serif" font-size="22px" text-anchor="middle" fill="#FFFFFF">⚡</text>
+            <text x="30" y="80" font-family="system-ui, sans-serif" font-size="14px" font-weight="700" fill="#FFFFFF" text-anchor="middle">SVG</text>
+            <text x="30" y="100" font-family="system-ui, sans-serif" font-size="12px" fill="#A1A7BB" text-anchor="middle">Scalable Vector</text>
+            <text x="30" y="115" font-family="system-ui, sans-serif" font-size="12px" fill="#A1A7BB" text-anchor="middle">(Infinite resolution)</text>
+        </g>
+
+        <g transform="translate(240, 30)">
+            <circle cx="30" cy="30" r="30" fill="#6D5DF6" fill-opacity="0.2"/>
+            <text x="30" y="36" font-family="sans-serif" font-size="22px" text-anchor="middle" fill="#FFFFFF">🖼</text>
+            <text x="30" y="80" font-family="system-ui, sans-serif" font-size="14px" font-weight="700" fill="#FFFFFF" text-anchor="middle">PNG</text>
+            <text x="30" y="100" font-family="system-ui, sans-serif" font-size="12px" fill="#A1A7BB" text-anchor="middle">High Quality</text>
+            <text x="30" y="115" font-family="system-ui, sans-serif" font-size="12px" fill="#A1A7BB" text-anchor="middle">(Transparent)</text>
+        </g>
+
+        <g transform="translate(440, 30)">
+            <circle cx="30" cy="30" r="30" fill="#6D5DF6" fill-opacity="0.2"/>
+            <text x="30" y="36" font-family="sans-serif" font-size="22px" text-anchor="middle" fill="#FFFFFF">🌄</text>
+            <text x="30" y="80" font-family="system-ui, sans-serif" font-size="14px" font-weight="700" fill="#FFFFFF" text-anchor="middle">JPG</text>
+            <text x="30" y="100" font-family="system-ui, sans-serif" font-size="12px" fill="#A1A7BB" text-anchor="middle">Web &amp; Social</text>
+            <text x="30" y="115" font-family="system-ui, sans-serif" font-size="12px" fill="#A1A7BB" text-anchor="middle">(Optimized)</text>
+        </g>
+
+        <g transform="translate(640, 30)">
+            <circle cx="30" cy="30" r="30" fill="#6D5DF6" fill-opacity="0.2"/>
+            <text x="30" y="36" font-family="sans-serif" font-size="22px" text-anchor="middle" fill="#FFFFFF">✦</text>
+            <text x="30" y="80" font-family="system-ui, sans-serif" font-size="14px" font-weight="700" fill="#FFFFFF" text-anchor="middle">ICO</text>
+            <text x="30" y="100" font-family="system-ui, sans-serif" font-size="12px" fill="#A1A7BB" text-anchor="middle">Favicon</text>
+            <text x="30" y="115" font-family="system-ui, sans-serif" font-size="12px" fill="#A1A7BB" text-anchor="middle">(Multi-size)</text>
+        </g>
+
+        <g transform="translate(840, 30)">
+            <circle cx="30" cy="30" r="30" fill="#6D5DF6" fill-opacity="0.2"/>
+            <text x="30" y="36" font-family="sans-serif" font-size="22px" text-anchor="middle" fill="#FFFFFF">📄</text>
+            <text x="30" y="80" font-family="system-ui, sans-serif" font-size="14px" font-weight="700" fill="#FFFFFF" text-anchor="middle">PDF</text>
+            <text x="30" y="100" font-family="system-ui, sans-serif" font-size="12px" fill="#A1A7BB" text-anchor="middle">Print Ready</text>
+            <text x="30" y="115" font-family="system-ui, sans-serif" font-size="12px" fill="#A1A7BB" text-anchor="middle">(Vector)</text>
+        </g>
+    </g>
+
+    <g transform="translate(1200, 2620)">
+        <rect x="0" y="0" width="680" height="160" rx="16" fill="#060913" stroke="#1E293B"/>
+        <text x="30" y="40" font-family="system-ui, sans-serif" font-size="16px" font-weight="700" fill="#6D5DF6">ABOUT THE CONCEPT</text>
+        <text x="30" y="70" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">The rising star above the horizon represents guidance,</text>
+        <text x="30" y="92" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">intelligence and exploration. The arc signifies the horizon</text>
+        <text x="30" y="114" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">of possibilities, while the star reflects clarity and purpose.</text>
+        <text x="30" y="136" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">Together, they form a mark of trust, growth and limitless</text>
+        <text x="30" y="156" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">potential — the essence of ASTRA.</text>
+        
+    <g id="bb_abt_horizon_rise_mark">
+        <circle cx="600" cy="85" r="33.75" fill="url(#bb_abt_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 519.0,139.0 Q 600,106.6 681.0,139.0 Q 600,113.8 519.0,139.0 Z" 
+              fill="url(#bb_abt_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 573.0,58.0 Q 600,85 596.85,81.85 Q 600,85 573.0,58.0 Z
+                 M 627.0,58.0 Q 600,85 603.15,81.85 Q 600,85 627.0,58.0 Z
+                 M 573.0,112.0 Q 600,85 596.85,88.15 Q 600,85 573.0,112.0 Z
+                 M 627.0,112.0 Q 600,85 603.15,88.15 Q 600,85 627.0,112.0 Z"
+              fill="url(#bb_abt_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 543.75,85 Q 600,79.15 600,85 Q 600,90.85 543.75,85 Z
+                 M 656.25,85 Q 600,79.15 600,85 Q 600,90.85 656.25,85 Z"
+              fill="url(#bb_abt_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 600,19.75 Q 592.8,85 600,85 Q 607.2,85 600,19.75 Z
+                 M 600,143.5 Q 592.8,85 600,85 Q 607.2,85 600,143.5 Z"
+              fill="url(#bb_abt_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="600,79.6 605.4,85 600,90.4 594.6,85" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+    </g>
+</svg>

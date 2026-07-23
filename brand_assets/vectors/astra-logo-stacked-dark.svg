@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="100%" height="100%">
+    
+    <defs>
+        <!-- Primary Starlight Flare Gradient -->
+        <linearGradient id="stk_d_starGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="35%" stop-color="#FFC857"/>
+            <stop offset="70%" stop-color="#6D5DF6"/>
+            <stop offset="100%" stop-color="#4F46E5"/>
+        </linearGradient>
+
+        <!-- Star Horizontal Glow Gradient -->
+        <linearGradient id="stk_d_starHorizGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+            <stop offset="50%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+        </linearGradient>
+
+        <!-- Star Radial Core Glow -->
+        <radialGradient id="stk_d_coreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+            <stop offset="30%" stop-color="#FFC857" stop-opacity="0.9"/>
+            <stop offset="70%" stop-color="#6D5DF6" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Horizon Arc Gradient -->
+        <linearGradient id="stk_d_horizonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="50%" stop-color="#FFC857" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+        </linearGradient>
+
+        <!-- Light Theme Horizon Arc Gradient -->
+        <linearGradient id="stk_d_horizonLightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.25"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="50%" stop-color="#D97706" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.25"/>
+        </linearGradient>
+
+        <!-- App Icon Background Gradient -->
+        <linearGradient id="stk_d_appIconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E1B4B"/>
+            <stop offset="45%" stop-color="#0B1020"/>
+            <stop offset="100%" stop-color="#030712"/>
+        </linearGradient>
+    </defs>
+    
+    <rect width="100%" height="100%" fill="#0B1020"/>
+    
+    <g id="stk_d_horizon_rise_mark">
+        <circle cx="400" cy="230" r="75.0" fill="url(#stk_d_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 220.0,350.0 Q 400,278.0 580.0,350.0 Q 400,294.0 220.0,350.0 Z" 
+              fill="url(#stk_d_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 340.0,170.0 Q 400,230 393.0,223.0 Q 400,230 340.0,170.0 Z
+                 M 460.0,170.0 Q 400,230 407.0,223.0 Q 400,230 460.0,170.0 Z
+                 M 340.0,290.0 Q 400,230 393.0,237.0 Q 400,230 340.0,290.0 Z
+                 M 460.0,290.0 Q 400,230 407.0,237.0 Q 400,230 460.0,290.0 Z"
+              fill="url(#stk_d_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 275.0,230 Q 400,217.0 400,230 Q 400,243.0 275.0,230 Z
+                 M 525.0,230 Q 400,217.0 400,230 Q 400,243.0 525.0,230 Z"
+              fill="url(#stk_d_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 400,85.0 Q 384.0,230 400,230 Q 416.0,230 400,85.0 Z
+                 M 400,360.0 Q 384.0,230 400,230 Q 416.0,230 400,360.0 Z"
+              fill="url(#stk_d_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="400,218.0 412.0,230 400,242.0 388.0,230" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+    
+    <g id="stk_d_wordmark_group">
+        
+        <path d="M 213.0,440 L 188.5,510.0 L 198.895,510.0 L 213.0,455.4 L 227.105,510.0 L 237.5,510.0 Z
+                 M 199.0,484.8 L 227.0,484.8 L 227.0,494.25 L 199.0,494.25 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 314.5,455.4 C 307.5,443.5 279.5,443.5 279.5,462.4 C 279.5,476.4 316.6,473.6 316.6,490.4 C 316.6,508.6 283.0,508.6 274.6,494.6 L 284.05,491.8 C 281.6,500.2 306.8,500.2 306.8,490.4 C 306.8,477.8 269.7,479.2 269.7,462.4 C 269.7,445.6 304.0,445.6 314.5,455.4 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 349.5,440 L 399.9,440 L 399.9,449.45 L 379.425,449.45 L 379.425,510.0 L 369.97499999999997,510.0 L 369.97499999999997,449.45 L 349.5,449.45 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 431.4,440 L 462.9,440 C 481.79999999999995,440 481.79999999999995,475.0 462.9,475.0 L 440.84999999999997,475.0 L 440.84999999999997,510.0 L 431.4,510.0 Z
+                 M 440.84999999999997,449.45 L 461.5,449.45 C 472.0,449.45 472.0,465.55 461.5,465.55 L 440.84999999999997,465.55 Z
+                 M 453.79999999999995,473.6 L 479.0,510.0 L 466.715,510.0 L 446.79999999999995,473.6 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 541.3,440 L 516.8,510.0 L 527.1949999999999,510.0 L 541.3,455.4 L 555.405,510.0 L 565.8,510.0 Z
+                 M 527.3,484.8 L 555.3,484.8 L 555.3,494.25 L 527.3,494.25 Z"
+              fill="#FFFFFF" />
+    
+        
+            <text x="361.4" y="531.0" font-family="system-ui, -apple-system, 'Geist', 'Satoshi', 'Inter', sans-serif" 
+                  font-size="14.0px" font-weight="600" letter-spacing="29.4px" fill="#A1A7BB" text-anchor="middle">
+                AI WORKSPACE
+            </text>
+        
+    </g>
+    
+</svg>

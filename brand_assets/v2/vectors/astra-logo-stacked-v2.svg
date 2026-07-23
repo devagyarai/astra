@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="100%" height="100%">
+    
+    <defs>
+        <!-- Flagship Starlight Radiant Gradient -->
+        <linearGradient id="stk2_starGradientV2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="30%" stop-color="#FFC857"/>
+            <stop offset="65%" stop-color="#6D5DF6"/>
+            <stop offset="100%" stop-color="#4F46E5"/>
+        </linearGradient>
+
+        <!-- Star Horizontal Glow Gradient -->
+        <linearGradient id="stk2_starHorizGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+            <stop offset="50%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+        </linearGradient>
+
+        <!-- Star Core Radial Aura -->
+        <radialGradient id="stk2_coreGlowV2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+            <stop offset="25%" stop-color="#FFC857" stop-opacity="0.95"/>
+            <stop offset="60%" stop-color="#6D5DF6" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Horizon Arc Gradient Dark -->
+        <linearGradient id="stk2_horizonGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.1"/>
+            <stop offset="20%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="50%" stop-color="#FFC857" stop-opacity="1"/>
+            <stop offset="80%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.1"/>
+        </linearGradient>
+
+        <!-- Horizon Arc Gradient Light -->
+        <linearGradient id="stk2_horizonLightGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="50%" stop-color="#F59E0B" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+        </linearGradient>
+
+        <!-- App Icon Premium Gradient -->
+        <linearGradient id="stk2_appIconBgV2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E1B4B"/>
+            <stop offset="40%" stop-color="#0B1020"/>
+            <stop offset="100%" stop-color="#030712"/>
+        </linearGradient>
+    </defs>
+    
+    <rect width="100%" height="100%" fill="#0B1020"/>
+    
+    <g id="stk2_variant_c_flagship_mark">
+        <circle cx="400" cy="230" r="75.0" fill="url(#stk2_coreGlowV2)" opacity="0.95" />
+        <path d="M 215.0,352.0 Q 400,276.0 585.0,352.0 Q 400,293.0 215.0,352.0 Z" 
+              fill="url(#stk2_horizonGradientV2)" />
+        <path d="M 338.0,168.0 Q 400,230 392.5,222.5 Q 400,230 338.0,168.0 Z
+                 M 462.0,168.0 Q 400,230 407.5,222.5 Q 400,230 462.0,168.0 Z
+                 M 338.0,292.0 Q 400,230 392.5,237.5 Q 400,230 338.0,292.0 Z
+                 M 462.0,292.0 Q 400,230 407.5,237.5 Q 400,230 462.0,292.0 Z"
+              fill="url(#stk2_starGradientV2)" opacity="0.75" />
+        <path d="M 272.0,230 Q 400,216.5 400,230 Q 400,243.5 272.0,230 Z
+                 M 528.0,230 Q 400,216.5 400,230 Q 400,243.5 528.0,230 Z"
+              fill="url(#stk2_starGradientV2)" />
+        <path d="M 400,82.0 Q 383.5,230 400,230 Q 416.5,230 400,82.0 Z
+                 M 400,362.0 Q 383.5,230 400,230 Q 416.5,230 400,362.0 Z"
+              fill="url(#stk2_starGradientV2)" />
+        <polygon points="400,217.0 413.0,230 400,243.0 387.0,230" 
+                 fill="#FFFFFF" opacity="0.98"/>
+    </g>
+    
+    
+    <g id="stk2_wordmark_v2_group">
+        
+        <path d="M 213.0,440 
+                 L 187.8,510.0 
+                 L 198.66750000000002,510.0 
+                 L 213.0,454.0 
+                 L 227.33249999999998,510.0 
+                 L 238.2,510.0 Z
+                 M 198.65,483.26 
+                 L 227.35,483.26 
+                 L 227.35,492.71 
+                 L 198.65,492.71 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 318.0,455.4 
+                 C 311.0,442.8 281.6,442.8 281.6,462.4 
+                 C 281.6,476.4 320.1,473.6 320.1,491.1 
+                 C 320.1,508.6 284.40000000000003,508.6 276.0,494.6 
+                 L 285.9225,491.8 
+                 C 283.0,500.2 310.3,500.2 310.3,491.1 
+                 C 310.3,477.8 272.15000000000003,479.2 272.15000000000003,462.4 
+                 C 272.15000000000003,444.9 306.8,444.9 318.0,455.4 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 353.7,440 
+                 L 404.09999999999997,440 
+                 L 404.09999999999997,449.45 
+                 L 383.625,449.45 
+                 L 383.625,510.0 
+                 L 374.17499999999995,510.0 
+                 L 374.17499999999995,449.45 
+                 L 353.7,449.45 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 437.7,440 
+                 L 469.9,440 
+                 C 488.79999999999995,440 488.79999999999995,475.0 469.9,475.0 
+                 L 447.15,475.0 
+                 L 447.15,510.0 
+                 L 437.7,510.0 Z
+                 M 447.15,449.45 
+                 L 468.5,449.45 
+                 C 479.0,449.45 479.0,465.55 468.5,465.55 
+                 L 447.15,465.55 Z
+                 M 460.8,473.6 
+                 L 486.7,510.0 
+                 L 474.8875,510.0 
+                 L 453.8,473.6 Z"
+              fill="#FFFFFF" />
+    
+        
+        <path d="M 550.4,440 
+                 L 525.1999999999999,510.0 
+                 L 536.0674999999999,510.0 
+                 L 550.4,454.0 
+                 L 564.7325000000001,510.0 
+                 L 575.6,510.0 Z
+                 M 536.05,483.26 
+                 L 564.75,483.26 
+                 L 564.75,492.71 
+                 L 536.05,492.71 Z"
+              fill="#FFFFFF" />
+    
+        
+            <text x="365.6" y="532.4" font-family="system-ui, -apple-system, 'Geist', 'Satoshi', sans-serif" 
+                  font-size="12.95px" font-weight="600" letter-spacing="30.8px" fill="#A1A7BB" text-anchor="middle">
+                AI OPERATING SYSTEM
+            </text>
+        
+    </g>
+    
+</svg>

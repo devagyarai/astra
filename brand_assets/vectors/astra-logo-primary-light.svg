@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="100%" height="100%">
+    
+    <defs>
+        <!-- Primary Starlight Flare Gradient -->
+        <linearGradient id="pri_l_starGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="35%" stop-color="#FFC857"/>
+            <stop offset="70%" stop-color="#6D5DF6"/>
+            <stop offset="100%" stop-color="#4F46E5"/>
+        </linearGradient>
+
+        <!-- Star Horizontal Glow Gradient -->
+        <linearGradient id="pri_l_starHorizGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+            <stop offset="50%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+        </linearGradient>
+
+        <!-- Star Radial Core Glow -->
+        <radialGradient id="pri_l_coreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+            <stop offset="30%" stop-color="#FFC857" stop-opacity="0.9"/>
+            <stop offset="70%" stop-color="#6D5DF6" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Horizon Arc Gradient -->
+        <linearGradient id="pri_l_horizonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="50%" stop-color="#FFC857" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+        </linearGradient>
+
+        <!-- Light Theme Horizon Arc Gradient -->
+        <linearGradient id="pri_l_horizonLightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.25"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="50%" stop-color="#D97706" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.25"/>
+        </linearGradient>
+
+        <!-- App Icon Background Gradient -->
+        <linearGradient id="pri_l_appIconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E1B4B"/>
+            <stop offset="45%" stop-color="#0B1020"/>
+            <stop offset="100%" stop-color="#030712"/>
+        </linearGradient>
+    </defs>
+    
+    <rect width="100%" height="100%" fill="#F8FAFC"/>
+    
+    <g id="pri_l_horizon_rise_mark">
+        <circle cx="230" cy="220" r="66.0" fill="url(#pri_l_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 71.6,325.6 Q 230,262.24 388.4,325.6 Q 230,276.32 71.6,325.6 Z" 
+              fill="url(#pri_l_horizonLightGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 177.2,167.2 Q 230,220 223.84,213.84 Q 230,220 177.2,167.2 Z
+                 M 282.8,167.2 Q 230,220 236.16,213.84 Q 230,220 282.8,167.2 Z
+                 M 177.2,272.8 Q 230,220 223.84,226.16 Q 230,220 177.2,272.8 Z
+                 M 282.8,272.8 Q 230,220 236.16,226.16 Q 230,220 282.8,272.8 Z"
+              fill="url(#pri_l_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 120.0,220 Q 230,208.56 230,220 Q 230,231.44 120.0,220 Z
+                 M 340.0,220 Q 230,208.56 230,220 Q 230,231.44 340.0,220 Z"
+              fill="url(#pri_l_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 230,92.4 Q 215.92,220 230,220 Q 244.08,220 230,92.4 Z
+                 M 230,334.4 Q 215.92,220 230,220 Q 244.08,220 230,334.4 Z"
+              fill="url(#pri_l_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="230,209.44 240.56,220 230,230.56 219.44,220" 
+                 fill="#090D16" opacity="0.95"/>
+    </g>
+    
+    
+    <g id="pri_l_wordmark_group">
+        
+        <path d="M 520.0,175 L 493.75,250.0 L 504.8875,250.0 L 520.0,191.5 L 535.1125,250.0 L 546.25,250.0 Z
+                 M 505.0,223.0 L 535.0,223.0 L 535.0,233.125 L 505.0,233.125 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 628.75,191.5 C 621.25,178.75 591.25,178.75 591.25,199.0 C 591.25,214.0 631.0,211.0 631.0,229.0 C 631.0,248.5 595.0,248.5 586.0,233.5 L 596.125,230.5 C 593.5,239.5 620.5,239.5 620.5,229.0 C 620.5,215.5 580.75,217.0 580.75,199.0 C 580.75,181.0 617.5,181.0 628.75,191.5 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 666.25,175 L 720.25,175 L 720.25,185.125 L 698.3125,185.125 L 698.3125,250.0 L 688.1875,250.0 L 688.1875,185.125 L 666.25,185.125 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 754.0,175 L 787.75,175 C 808.0,175 808.0,212.5 787.75,212.5 L 764.125,212.5 L 764.125,250.0 L 754.0,250.0 Z
+                 M 764.125,185.125 L 786.25,185.125 C 797.5,185.125 797.5,202.375 786.25,202.375 L 764.125,202.375 Z
+                 M 778.0,211.0 L 805.0,250.0 L 791.8375,250.0 L 770.5,211.0 Z"
+              fill="#090D16" />
+    
+        
+        <path d="M 871.75,175 L 845.5,250.0 L 856.6375,250.0 L 871.75,191.5 L 886.8625,250.0 L 898.0,250.0 Z
+                 M 856.75,223.0 L 886.75,223.0 L 886.75,233.125 L 856.75,233.125 Z"
+              fill="#090D16" />
+    
+        
+            <text x="679.0" y="272.5" font-family="system-ui, -apple-system, 'Geist', 'Satoshi', 'Inter', sans-serif" 
+                  font-size="15.0px" font-weight="600" letter-spacing="31.5px" fill="#475569" text-anchor="middle">
+                AI WORKSPACE
+            </text>
+        
+    </g>
+    
+</svg>

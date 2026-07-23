@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="100%" height="100%">
+    
+    <defs>
+        <!-- Primary Starlight Flare Gradient -->
+        <linearGradient id="icon_r_starGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="35%" stop-color="#FFC857"/>
+            <stop offset="70%" stop-color="#6D5DF6"/>
+            <stop offset="100%" stop-color="#4F46E5"/>
+        </linearGradient>
+
+        <!-- Star Horizontal Glow Gradient -->
+        <linearGradient id="icon_r_starHorizGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+            <stop offset="50%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+        </linearGradient>
+
+        <!-- Star Radial Core Glow -->
+        <radialGradient id="icon_r_coreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+            <stop offset="30%" stop-color="#FFC857" stop-opacity="0.9"/>
+            <stop offset="70%" stop-color="#6D5DF6" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Horizon Arc Gradient -->
+        <linearGradient id="icon_r_horizonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="50%" stop-color="#FFC857" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+        </linearGradient>
+
+        <!-- Light Theme Horizon Arc Gradient -->
+        <linearGradient id="icon_r_horizonLightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.25"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="50%" stop-color="#D97706" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.25"/>
+        </linearGradient>
+
+        <!-- App Icon Background Gradient -->
+        <linearGradient id="icon_r_appIconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E1B4B"/>
+            <stop offset="45%" stop-color="#0B1020"/>
+            <stop offset="100%" stop-color="#030712"/>
+        </linearGradient>
+    </defs>
+    
+    <rect width="1024" height="1024" rx="224" ry="224" fill="url(#icon_r_appIconBg)"/>
+    <rect width="1020" height="1020" x="2" y="2" rx="222" ry="222" fill="none" stroke="#6D5DF6" stroke-opacity="0.3" stroke-width="4"/>
+    
+    <g id="icon_r_horizon_rise_mark">
+        <circle cx="512" cy="490" r="172.5" fill="url(#icon_r_coreGlow)" opacity="0.9" />
+        
+        <!-- Horizon Arc -->
+        <path d="M 98.00000000000006,766.0 Q 512,600.4 926.0,766.0 Q 512,637.2 98.00000000000006,766.0 Z" 
+              fill="url(#icon_r_horizonGradient)" />
+
+        <!-- Star Diagonal Rays -->
+        <path d="M 374.0,352.0 Q 512,490 495.9,473.9 Q 512,490 374.0,352.0 Z
+                 M 650.0,352.0 Q 512,490 528.1,473.9 Q 512,490 650.0,352.0 Z
+                 M 374.0,628.0 Q 512,490 495.9,506.1 Q 512,490 374.0,628.0 Z
+                 M 650.0,628.0 Q 512,490 528.1,506.1 Q 512,490 650.0,628.0 Z"
+              fill="url(#icon_r_starGradient)" opacity="0.75" />
+
+        <!-- Star Horizontal Flare -->
+        <path d="M 224.5,490 Q 512,460.1 512,490 Q 512,519.9 224.5,490 Z
+                 M 799.5,490 Q 512,460.1 512,490 Q 512,519.9 799.5,490 Z"
+              fill="url(#icon_r_starGradient)" />
+
+        <!-- Star Vertical Main Flare -->
+        <path d="M 512,156.5 Q 475.2,490 512,490 Q 548.8,490 512,156.5 Z
+                 M 512,789.0 Q 475.2,490 512,490 Q 548.8,490 512,789.0 Z"
+              fill="url(#icon_r_starGradient)" />
+              
+        <!-- Core Diamond Apex Sharpener -->
+        <polygon points="512,462.4 539.6,490 512,517.6 484.4,490" 
+                 fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    
+</svg>

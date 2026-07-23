@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1400" width="2000" height="1400">
+    
+    <defs>
+        <!-- Flagship Starlight Radiant Gradient -->
+        <linearGradient id="b3v_starGradientV2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="30%" stop-color="#FFC857"/>
+            <stop offset="65%" stop-color="#6D5DF6"/>
+            <stop offset="100%" stop-color="#4F46E5"/>
+        </linearGradient>
+
+        <!-- Star Horizontal Glow Gradient -->
+        <linearGradient id="b3v_starHorizGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+            <stop offset="50%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+        </linearGradient>
+
+        <!-- Star Core Radial Aura -->
+        <radialGradient id="b3v_coreGlowV2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+            <stop offset="25%" stop-color="#FFC857" stop-opacity="0.95"/>
+            <stop offset="60%" stop-color="#6D5DF6" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Horizon Arc Gradient Dark -->
+        <linearGradient id="b3v_horizonGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.1"/>
+            <stop offset="20%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="50%" stop-color="#FFC857" stop-opacity="1"/>
+            <stop offset="80%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.1"/>
+        </linearGradient>
+
+        <!-- Horizon Arc Gradient Light -->
+        <linearGradient id="b3v_horizonLightGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="50%" stop-color="#F59E0B" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+        </linearGradient>
+
+        <!-- App Icon Premium Gradient -->
+        <linearGradient id="b3v_appIconBgV2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E1B4B"/>
+            <stop offset="40%" stop-color="#0B1020"/>
+            <stop offset="100%" stop-color="#030712"/>
+        </linearGradient>
+    </defs>
+    
+    <rect width="2000" height="1400" fill="#070A14"/>
+    
+    <!-- Board Header -->
+    <rect width="2000" height="160" fill="#0B1020"/>
+    <line x1="0" y1="160" x2="2000" y2="160" stroke="#1E293B" stroke-width="2"/>
+    <text x="80" y="80" font-family="system-ui, sans-serif" font-size="38px" font-weight="800" fill="#FFFFFF" letter-spacing="3px">ASTRA REFINED DIRECTIONS</text>
+    <text x="80" y="125" font-family="system-ui, sans-serif" font-size="20px" font-weight="500" fill="#6D5DF6">Three Siblings — Optical &amp; Identity Exploration</text>
+
+    <!-- Variation A -->
+    <g transform="translate(80, 220)">
+        <rect width="570" height="1060" rx="20" fill="#0B1020" stroke="#1E293B" stroke-width="2"/>
+        <text x="40" y="60" font-family="system-ui, sans-serif" font-size="24px" font-weight="700" fill="#FFFFFF">VARIATION A</text>
+        <text x="40" y="90" font-family="system-ui, sans-serif" font-size="16px" font-weight="600" fill="#FFC857">Ultra Minimal</text>
+        
+        <rect x="40" y="120" width="490" height="380" rx="14" fill="#050814"/>
+        
+    <g id="b3v_a_variant_a_mark">
+        <path d="M 125.0,425.0 Q 285,362.0 445.0,425.0 Q 285,374.0 125.0,425.0 Z" 
+              fill="#FFC857" />
+        <path d="M 285,180.0 L 297.0,310 L 285,425.0 L 273.0,310 Z" 
+              fill="#FFFFFF" />
+        <path d="M 175.0,310 L 285,300.0 L 395.0,310 L 285,320.0 Z" 
+              fill="#FFFFFF" />
+    </g>
+    
+        
+        <text x="40" y="540" font-family="system-ui, sans-serif" font-size="18px" font-weight="700" fill="#FFFFFF">DESIGN CHARACTERISTICS</text>
+        <text x="40" y="575" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Razor-sharp primitive vector strokes</text>
+        <text x="40" y="605" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Maximum silhouette recognition at 16×16</text>
+        <text x="40" y="635" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Zero gradient dependency for high contrast</text>
+        <text x="40" y="665" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Single-taper optical horizon sweep</text>
+
+        <rect x="40" y="710" width="490" height="300" rx="12" fill="#0A0F1D"/>
+        <text x="60" y="745" font-family="system-ui, sans-serif" font-size="15px" font-weight="700" fill="#6D5DF6">REASONING &amp; SCALABILITY</text>
+        <text x="60" y="780" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">Designed for environments requiring zero clutter.</text>
+        <text x="60" y="805" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">Performs flawlessly on dark terminals, e-ink</text>
+        <text x="60" y="830" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">displays, micro favicons, and low-res screens.</text>
+    </g>
+
+    <!-- Variation B -->
+    <g transform="translate(715, 220)">
+        <rect width="570" height="1060" rx="20" fill="#0B1020" stroke="#1E293B" stroke-width="2"/>
+        <text x="40" y="60" font-family="system-ui, sans-serif" font-size="24px" font-weight="700" fill="#FFFFFF">VARIATION B</text>
+        <text x="40" y="90" font-family="system-ui, sans-serif" font-size="16px" font-weight="600" fill="#6D5DF6">Enterprise</text>
+        
+        <rect x="40" y="120" width="490" height="380" rx="14" fill="#050814"/>
+        
+    <g id="b3v_b_variant_b_mark">
+        <circle cx="285" cy="310" r="55.0" fill="url(#b3v_b_coreGlowV2)" opacity="0.85" />
+        <path d="M 110.0,430.0 Q 285,358.0 460.0,430.0 Q 285,373.0 110.0,430.0 Z" 
+              fill="url(#b3v_b_horizonGradientV2)" />
+        <path d="M 230.0,255.0 Q 285,310 279.0,304.0 Q 285,310 230.0,255.0 Z
+                 M 340.0,255.0 Q 285,310 291.0,304.0 Q 285,310 340.0,255.0 Z
+                 M 230.0,365.0 Q 285,310 279.0,316.0 Q 285,310 230.0,365.0 Z
+                 M 340.0,365.0 Q 285,310 291.0,316.0 Q 285,310 340.0,365.0 Z"
+              fill="url(#b3v_b_starGradientV2)" opacity="0.65" />
+        <path d="M 165.0,310 Q 285,298.0 285,310 Q 285,322.0 165.0,310 Z
+                 M 405.0,310 Q 285,298.0 285,310 Q 285,322.0 405.0,310 Z"
+              fill="url(#b3v_b_starGradientV2)" />
+        <path d="M 285,170.0 Q 270.0,310 285,310 Q 300.0,310 285,170.0 Z
+                 M 285,435.0 Q 270.0,310 285,310 Q 300.0,310 285,435.0 Z"
+              fill="url(#b3v_b_starGradientV2)" />
+    </g>
+    
+        
+        <text x="40" y="540" font-family="system-ui, sans-serif" font-size="18px" font-weight="700" fill="#FFFFFF">DESIGN CHARACTERISTICS</text>
+        <text x="40" y="575" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Golden Ratio (1 : 1.618) mathematical proportion</text>
+        <text x="40" y="605" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Authoritative corporate visual weight</text>
+        <text x="40" y="635" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Smooth quadratic horizon curvature</text>
+        <text x="40" y="665" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Balanced core optical junction</text>
+
+        <rect x="40" y="710" width="490" height="300" rx="12" fill="#0A0F1D"/>
+        <text x="60" y="745" font-family="system-ui, sans-serif" font-size="15px" font-weight="700" fill="#6D5DF6">REASONING &amp; SCALABILITY</text>
+        <text x="60" y="780" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">Tailored for enterprise software OS platforms.</text>
+        <text x="60" y="805" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">Communicates trust, stability, reliability, and</text>
+        <text x="60" y="830" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">institutional authority for B2B deployments.</text>
+    </g>
+
+    <!-- Variation C (Flagship) -->
+    <g transform="translate(1350, 220)">
+        <rect width="570" height="1060" rx="20" fill="#0B1020" stroke="#6D5DF6" stroke-width="3"/>
+        <rect x="30" y="20" width="160" height="30" rx="6" fill="#6D5DF6"/>
+        <text x="110" y="41" font-family="system-ui, sans-serif" font-size="12px" font-weight="800" fill="#FFFFFF" text-anchor="middle">FLAGSHIP IDENTITY</text>
+
+        <text x="40" y="85" font-family="system-ui, sans-serif" font-size="24px" font-weight="700" fill="#FFFFFF">VARIATION C</text>
+        <text x="40" y="110" font-family="system-ui, sans-serif" font-size="16px" font-weight="600" fill="#FFC857">Definitive Flagship</text>
+        
+        <rect x="40" y="130" width="490" height="370" rx="14" fill="#050814"/>
+        
+    <g id="b3v_c_variant_c_flagship_mark">
+        <circle cx="285" cy="315" r="78.75" fill="url(#b3v_c_coreGlowV2)" opacity="0.95" />
+        <path d="M 90.75,443.1 Q 285,363.3 479.25,443.1 Q 285,381.15 90.75,443.1 Z" 
+              fill="url(#b3v_c_horizonGradientV2)" />
+        <path d="M 219.89999999999998,249.89999999999998 Q 285,315 277.125,307.125 Q 285,315 219.89999999999998,249.89999999999998 Z
+                 M 350.1,249.89999999999998 Q 285,315 292.875,307.125 Q 285,315 350.1,249.89999999999998 Z
+                 M 219.89999999999998,380.1 Q 285,315 277.125,322.875 Q 285,315 219.89999999999998,380.1 Z
+                 M 350.1,380.1 Q 285,315 292.875,322.875 Q 285,315 350.1,380.1 Z"
+              fill="url(#b3v_c_starGradientV2)" opacity="0.75" />
+        <path d="M 150.6,315 Q 285,300.825 285,315 Q 285,329.175 150.6,315 Z
+                 M 419.4,315 Q 285,300.825 285,315 Q 285,329.175 419.4,315 Z"
+              fill="url(#b3v_c_starGradientV2)" />
+        <path d="M 285,159.6 Q 267.675,315 285,315 Q 302.325,315 285,159.6 Z
+                 M 285,453.6 Q 267.675,315 285,315 Q 302.325,315 285,453.6 Z"
+              fill="url(#b3v_c_starGradientV2)" />
+        <polygon points="285,301.35 298.65,315 285,328.65 271.35,315" 
+                 fill="#FFFFFF" opacity="0.98"/>
+    </g>
+    
+        
+        <text x="40" y="540" font-family="system-ui, sans-serif" font-size="18px" font-weight="700" fill="#FFFFFF">DESIGN CHARACTERISTICS</text>
+        <text x="40" y="575" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Hidden 'A' negative space chevron integration</text>
+        <text x="40" y="605" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Radiant starlight core aura &amp; micro diamond</text>
+        <text x="40" y="635" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Panoramic planetary horizon sweep</text>
+        <text x="40" y="665" font-family="system-ui, sans-serif" font-size="14px" fill="#A1A7BB">• Supreme emotional resonance &amp; elegance</text>
+
+        <rect x="40" y="710" width="490" height="300" rx="12" fill="#0A0F1D"/>
+        <text x="60" y="745" font-family="system-ui, sans-serif" font-size="15px" font-weight="700" fill="#FFC857">RECOMMENDED BRAND DIRECTION</text>
+        <text x="60" y="780" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">The definitive identity for ASTRA. Merges subtle</text>
+        <text x="60" y="805" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">hidden intelligence with unforgettable visual</text>
+        <text x="60" y="830" font-family="system-ui, sans-serif" font-size="13px" fill="#A1A7BB">impact. Built to represent a billion-dollar brand.</text>
+    </g>
+</svg>

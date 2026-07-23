@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+    
+    <defs>
+        <!-- Flagship Starlight Radiant Gradient -->
+        <linearGradient id="vb_starGradientV2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="30%" stop-color="#FFC857"/>
+            <stop offset="65%" stop-color="#6D5DF6"/>
+            <stop offset="100%" stop-color="#4F46E5"/>
+        </linearGradient>
+
+        <!-- Star Horizontal Glow Gradient -->
+        <linearGradient id="vb_starHorizGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+            <stop offset="50%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+        </linearGradient>
+
+        <!-- Star Core Radial Aura -->
+        <radialGradient id="vb_coreGlowV2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+            <stop offset="25%" stop-color="#FFC857" stop-opacity="0.95"/>
+            <stop offset="60%" stop-color="#6D5DF6" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Horizon Arc Gradient Dark -->
+        <linearGradient id="vb_horizonGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.1"/>
+            <stop offset="20%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="50%" stop-color="#FFC857" stop-opacity="1"/>
+            <stop offset="80%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.1"/>
+        </linearGradient>
+
+        <!-- Horizon Arc Gradient Light -->
+        <linearGradient id="vb_horizonLightGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="50%" stop-color="#F59E0B" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+        </linearGradient>
+
+        <!-- App Icon Premium Gradient -->
+        <linearGradient id="vb_appIconBgV2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E1B4B"/>
+            <stop offset="40%" stop-color="#0B1020"/>
+            <stop offset="100%" stop-color="#030712"/>
+        </linearGradient>
+    </defs>
+    
+    <rect width="100%" height="100%" fill="#0B1020"/>
+    
+    <g id="vb_variant_b_mark">
+        <circle cx="250" cy="240" r="60.50000000000001" fill="url(#vb_coreGlowV2)" opacity="0.85" />
+        <path d="M 57.49999999999997,372.0 Q 250,292.8 442.5,372.0 Q 250,309.3 57.49999999999997,372.0 Z" 
+              fill="url(#vb_horizonGradientV2)" />
+        <path d="M 189.5,179.5 Q 250,240 243.4,233.4 Q 250,240 189.5,179.5 Z
+                 M 310.5,179.5 Q 250,240 256.6,233.4 Q 250,240 310.5,179.5 Z
+                 M 189.5,300.5 Q 250,240 243.4,246.6 Q 250,240 189.5,300.5 Z
+                 M 310.5,300.5 Q 250,240 256.6,246.6 Q 250,240 310.5,300.5 Z"
+              fill="url(#vb_starGradientV2)" opacity="0.65" />
+        <path d="M 118.0,240 Q 250,226.8 250,240 Q 250,253.2 118.0,240 Z
+                 M 382.0,240 Q 250,226.8 250,240 Q 250,253.2 382.0,240 Z"
+              fill="url(#vb_starGradientV2)" />
+        <path d="M 250,86.0 Q 233.5,240 250,240 Q 266.5,240 250,86.0 Z
+                 M 250,377.5 Q 233.5,240 250,240 Q 266.5,240 250,377.5 Z"
+              fill="url(#vb_starGradientV2)" />
+    </g>
+    
+</svg>

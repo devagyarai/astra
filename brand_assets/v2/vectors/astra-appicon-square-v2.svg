@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="100%" height="100%">
+    
+    <defs>
+        <!-- Flagship Starlight Radiant Gradient -->
+        <linearGradient id="ics2_starGradientV2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="30%" stop-color="#FFC857"/>
+            <stop offset="65%" stop-color="#6D5DF6"/>
+            <stop offset="100%" stop-color="#4F46E5"/>
+        </linearGradient>
+
+        <!-- Star Horizontal Glow Gradient -->
+        <linearGradient id="ics2_starHorizGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+            <stop offset="50%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.15"/>
+        </linearGradient>
+
+        <!-- Star Core Radial Aura -->
+        <radialGradient id="ics2_coreGlowV2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+            <stop offset="25%" stop-color="#FFC857" stop-opacity="0.95"/>
+            <stop offset="60%" stop-color="#6D5DF6" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Horizon Arc Gradient Dark -->
+        <linearGradient id="ics2_horizonGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.1"/>
+            <stop offset="20%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="50%" stop-color="#FFC857" stop-opacity="1"/>
+            <stop offset="80%" stop-color="#6D5DF6" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.1"/>
+        </linearGradient>
+
+        <!-- Horizon Arc Gradient Light -->
+        <linearGradient id="ics2_horizonLightGradientV2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+            <stop offset="25%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="50%" stop-color="#F59E0B" stop-opacity="1"/>
+            <stop offset="75%" stop-color="#6D5DF6" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#6D5DF6" stop-opacity="0.2"/>
+        </linearGradient>
+
+        <!-- App Icon Premium Gradient -->
+        <linearGradient id="ics2_appIconBgV2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E1B4B"/>
+            <stop offset="40%" stop-color="#0B1020"/>
+            <stop offset="100%" stop-color="#030712"/>
+        </linearGradient>
+    </defs>
+    
+    <rect width="1024" height="1024" fill="url(#ics2_appIconBgV2)"/>
+    
+    <g id="ics2_variant_c_flagship_mark">
+        <circle cx="512" cy="490" r="172.5" fill="url(#ics2_coreGlowV2)" opacity="0.95" />
+        <path d="M 86.50000000000006,770.5999999999999 Q 512,595.8 937.5,770.5999999999999 Q 512,634.9 86.50000000000006,770.5999999999999 Z" 
+              fill="url(#ics2_horizonGradientV2)" />
+        <path d="M 369.4,347.4 Q 512,490 494.75,472.75 Q 512,490 369.4,347.4 Z
+                 M 654.6,347.4 Q 512,490 529.25,472.75 Q 512,490 654.6,347.4 Z
+                 M 369.4,632.6 Q 512,490 494.75,507.25 Q 512,490 369.4,632.6 Z
+                 M 654.6,632.6 Q 512,490 529.25,507.25 Q 512,490 654.6,632.6 Z"
+              fill="url(#ics2_starGradientV2)" opacity="0.75" />
+        <path d="M 217.60000000000002,490 Q 512,458.95 512,490 Q 512,521.05 217.60000000000002,490 Z
+                 M 806.4,490 Q 512,458.95 512,490 Q 512,521.05 806.4,490 Z"
+              fill="url(#ics2_starGradientV2)" />
+        <path d="M 512,149.60000000000002 Q 474.05,490 512,490 Q 549.95,490 512,149.60000000000002 Z
+                 M 512,793.5999999999999 Q 474.05,490 512,490 Q 549.95,490 512,793.5999999999999 Z"
+              fill="url(#ics2_starGradientV2)" />
+        <polygon points="512,460.1 541.9,490 512,519.9 482.1,490" 
+                 fill="#FFFFFF" opacity="0.98"/>
+    </g>
+    
+</svg>
