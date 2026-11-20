@@ -101,7 +101,7 @@ export default function WorkspacePage() {
 
   const [activeSection, setActiveSection] = useState("goal");
   const [inlineAnalyzing, setInlineAnalyzing] = useState<string | null>(null);
-  const [inlineResult, setInlineResult] = useState<{ field: string; data: Record<string, string> } | null>(null);
+  const [inlineResult, setInlineResult] = useState<{ field: string; data: Record<string, unknown> } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleInlineAI = async (field: string, analysisType: string) => {
@@ -307,13 +307,17 @@ export default function WorkspacePage() {
                     />
                     
                     <AnimatePresence>
-                      {inlineResult?.field === "goal" && inlineResult.data.improvedGoal && (
+                      {inlineResult?.field === "goal" && (inlineResult.data.improvedVersion || inlineResult.data.improvedGoal) && (
                         <div className="mt-4">
                           <SuggestionPreview 
                             title="Improved Goal"
-                            suggestion={inlineResult.data.improvedGoal}
+                            suggestion={((inlineResult.data.improvedVersion || inlineResult.data.improvedGoal) as string)}
+                            originalText={decision.goal}
                             onAccept={() => {
-                              updateField("goal", inlineResult.data.improvedGoal);
+                              const newGoal = (inlineResult.data.improvedVersion || inlineResult.data.improvedGoal) as string;
+                              if (newGoal && typeof newGoal === "string") {
+                                updateField("goal", newGoal);
+                              }
                               setInlineResult(null);
                             }}
                             onReject={() => setInlineResult(null)}

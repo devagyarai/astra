@@ -149,17 +149,19 @@ export function CopilotSidebar({ decision, updateField, isMobile = false }: Copi
             provider: aiSettings.provider,
             system: "You are an expert Decision Intelligence Partner (Astra). Answer concisely, use markdown, tables, and lists. Focus on helping the user make the best possible decision.",
             decisionContext: JSON.stringify({
+              title: decision.title,
               goal: decision.goal,
               context: decision.context,
               constraints: decision.constraints,
               options: decision.options,
-              evidence: decision.evidence
+              evidence: decision.evidence,
+              notes: decision.notes
             })
           })
         });
       }
     });
-  }, [apiKey, aiSettings.provider, decision.goal, decision.context, decision.constraints, decision.options, decision.evidence]);
+  }, [apiKey, aiSettings.provider, decision.title, decision.goal, decision.context, decision.constraints, decision.options, decision.evidence, decision.notes]);
 
   const { messages, sendMessage, status, stop, setMessages } = useChat({
     id: decision.id,
@@ -442,22 +444,32 @@ export function CopilotSidebar({ decision, updateField, isMobile = false }: Copi
                   
                   {actionResult && activeAction === "goal" ? (
                     <div className="space-y-4">
-                      <SuggestionPreview 
-                        title={activeAction === "goal" ? "Improved Goal" : "AI Suggestion"}
-                        suggestion={(actionResult.improvedGoal as string) || (actionResult.recommendation as string) || JSON.stringify(actionResult, null, 2)}
-                        originalText={activeAction === "goal" ? decision.goal : undefined}
-                        onAccept={() => {
-                          if (activeAction === "goal" && actionResult.improvedGoal) {
-                            updateField("goal", actionResult.improvedGoal as string);
-                          }
-                          setActionResult(null);
-                          setActiveAction(null);
-                        }}
-                        onReject={() => {
-                          setActionResult(null);
-                          setActiveAction(null);
-                        }}
-                      />
+                      {(actionResult.improvedVersion || actionResult.improvedGoal) ? (
+                        <SuggestionPreview 
+                          title="Improved Goal"
+                          suggestion={((actionResult.improvedVersion || actionResult.improvedGoal) as string)}
+                          originalText={decision.goal}
+                          onAccept={() => {
+                            const newGoal = (actionResult.improvedVersion || actionResult.improvedGoal) as string;
+                            if (newGoal && typeof newGoal === "string") {
+                              updateField("goal", newGoal);
+                            }
+                            setActionResult(null);
+                            setActiveAction(null);
+                          }}
+                          onReject={() => {
+                            setActionResult(null);
+                            setActiveAction(null);
+                          }}
+                        />
+                      ) : (
+                        <div className="p-4 rounded-xl border border-destructive/20 bg-destructive/10 text-xs text-destructive flex items-center justify-between">
+                          <span>No improved goal was generated. Please try again.</span>
+                          <Button variant="ghost" size="sm" className="h-6 text-xs" onClick={() => { setActionResult(null); setActiveAction(null); }}>
+                            Dismiss
+                          </Button>
+                        </div>
+                      )}
                     </div>
                   ) : actionResult && (activeAction === "bias" || activeAction === "tradeoff") ? (
                     <div className="space-y-4">
